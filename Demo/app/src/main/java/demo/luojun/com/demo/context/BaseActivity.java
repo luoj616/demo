@@ -3,7 +3,8 @@ package demo.luojun.com.demo.context;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+
+import com.orhanobut.logger.Logger;
 
 import demo.luojun.com.demo.utils.ToastUtils;
 import demo.luojun.com.demo.view.BaseView;
@@ -21,7 +22,7 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
      */
     protected void print(String info) {
         //if (AppContext.isTest)
-        Log.e("info", info);
+       Logger.e( info);
     }
 
     protected void toast(String info){

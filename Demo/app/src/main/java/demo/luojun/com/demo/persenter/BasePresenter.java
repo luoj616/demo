@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
+import com.orhanobut.logger.Logger;
+
+import demo.luojun.com.demo.utils.ToastUtils;
 import demo.luojun.com.demo.view.BaseView;
 
 
@@ -75,7 +78,8 @@ public class BasePresenter<V extends BaseView> {
      */
     protected void print(String info) {
         //   if(AppContext.isTest)
-        Log.e("info", info);
+        Logger.e( info);
+
     }
 
 
@@ -97,6 +101,9 @@ public class BasePresenter<V extends BaseView> {
             }
             Log.e("info", msg);// 打印剩余日志
         }
+    }
+    protected void toast(String info){
+        ToastUtils.showToast(getThisActivity(), info);
     }
 
 
