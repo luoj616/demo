@@ -14,5 +14,8 @@ public static final String SERVER =SERVER_PX;
     public static final String OKHTTP_GET=  "http://initial.belle.net.cn/initial-web/countryRegionCodeMapping";
     public static final String OKHTTP_GET_JIANSHU = "http://www.jianshu.com/u/9df45b87cfdf";
 
+    public static final String YG_VERSION = "http://mobile.yougou.com/v_1.8/version";
+    public static final String YG_CHANELS = "http://mobile.yougou.com/v_1.8/channels";
+
 
 }
