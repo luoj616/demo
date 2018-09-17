@@ -1,8 +1,10 @@
 package demo.luojun.com.demo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -16,8 +18,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
     }
+
     @OnClick(R.id.network_bt)
-    public void networkBt(){
+    public void networkBt() {
         startActivity(new Intent(MainActivity.this, NetworkActivity.class));
     }
+
+
+    @OnClick(R.id.test_bt)
+    public void test() {
+        Toast.makeText(this,"test",Toast.LENGTH_LONG).show();
+        jump();
+    }
+
+    public void jump() {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        String guanzhu_URL = "http://weixin.qq.com/r/o3W_sRvEMSVOhwrSnyCH"; //这是你公共帐号的二维码的实际内容。可以用扫描软件扫一下就得到了。这是我的公共帐号地址。
+
+        i.setData(Uri.parse(guanzhu_URL)); //设置要传递的内容。
+
+        i.setPackage("com.tencent.mm"); //直接制定要发送到的程序的包名。也可以不制定。就会弹出程序选择器让你手动选木程序。
+
+     //   i.putExtra(Intent.EXTRASUBJECT,"Share"); i.setFlags(Intent.FLAGACTIVITYNEWTASK);
+
+        startActivity(i); //当然要在Activity界面 调用了。
+}
+
 }

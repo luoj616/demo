@@ -23,6 +23,7 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
     protected void print(String info) {
         //if (AppContext.isTest)
        Logger.e( info);
+
     }
 
     protected void toast(String info){

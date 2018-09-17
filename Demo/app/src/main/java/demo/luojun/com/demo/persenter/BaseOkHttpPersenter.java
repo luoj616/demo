@@ -24,7 +24,7 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
 
     public OkHttpClient getOkhttpClientBulider() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(3 * 1000, TimeUnit.MILLISECONDS);//设置超时时间
+        builder.connectTimeout(3 * 10000, TimeUnit.MILLISECONDS);//设置超时时间
         return builder.build();
     }
 
@@ -35,6 +35,7 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
      * @param url
      */
     protected void requestGetSync(String url, final int requestCode) {
+        //test
         final Call call = getOkhttpClient().newCall(getRequestYG(url));
         new Thread(new Runnable() {
             @Override
