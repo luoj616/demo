@@ -21,12 +21,12 @@ public class OkhttpActivity extends BaseActivity implements OkhttpView {
         okhttpPersenter =new OkhttpPersenter();
         okhttpPersenter.attachView(this);
         print("test");
-        OkHttpClient okHttpClient = new OkHttpClient();
+     //   OkHttpClient okHttpClient = new OkHttpClient();
     }
     @OnClick(R.id.get_okhttp_bt)
     public void onclickGetOkhttp(){
         print("test");
-        okhttpPersenter.okhttpGet();
+      okhttpPersenter.okhttpGet();
 
     }
 

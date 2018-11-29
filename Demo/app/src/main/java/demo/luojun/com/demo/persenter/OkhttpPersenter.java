@@ -8,7 +8,7 @@ import demo.luojun.com.demo.view.OkhttpView;
  */
 public class OkhttpPersenter extends BaseOkHttpPersenter<OkhttpView> {
     public void okhttpGet() {
-        requestGetSync(AppServerAPI.YG_VERSION,1);
+        requestGetSync(AppServerAPI.OKHTTP_GET,1);
     }
 
     @Override
