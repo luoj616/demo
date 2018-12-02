@@ -7,8 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
+import demo.luojun.com.demo.context.BaseActivity;
 
-public class NetworkActivity extends AppCompatActivity {
+public class NetworkActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

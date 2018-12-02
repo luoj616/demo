@@ -8,9 +8,10 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import demo.luojun.com.demo.context.BaseActivity;
 import demo.luojun.com.demo.network.NetworkActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.network_bt)
     public void networkBt() {
-        startActivity(new Intent(MainActivity.this, NetworkActivity.class));
+        //startActivity(new Intent(MainActivity.this, NetworkActivity.class));
+        basePresenter.jumpActivity(NetworkActivity.class);
     }
 
 

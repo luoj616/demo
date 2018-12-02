@@ -3,17 +3,23 @@ package demo.luojun.com.demo.context;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.orhanobut.logger.Logger;
 
+import demo.luojun.com.demo.persenter.BasePresenter;
 import demo.luojun.com.demo.utils.ToastUtils;
 import demo.luojun.com.demo.view.BaseView;
 
 public class BaseActivity extends AppCompatActivity implements BaseView {
-
+      protected BasePresenter basePresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        priintLog("所在页面--oncreate===——————"+getClass().getSimpleName());
+        basePresenter = new BasePresenter();
+        basePresenter.attachView(this);
+
 
     }
     /**
@@ -24,6 +30,10 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
         //if (AppContext.isTest)
        Logger.e( info);
 
+    }
+
+    protected  void priintLog(String info){
+        Log.e("info", info );
     }
 
     protected void toast(String info){

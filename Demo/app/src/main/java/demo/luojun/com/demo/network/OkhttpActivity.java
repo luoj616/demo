@@ -25,8 +25,32 @@ public class OkhttpActivity extends BaseActivity implements OkhttpView {
     }
     @OnClick(R.id.get_okhttp_bt)
     public void onclickGetOkhttp(){
+
+        okhttpPersenter.okhttpGet();
+
+    }
+    @OnClick(R.id.get_yg_bt)
+    public void onclickYougouOkhttp(){
+
+        okhttpPersenter.okhttpYG();
+
+    }
+    @OnClick(R.id.get_yg_catebt)
+    public void onclickYougouCateOkhttp(){
+
+        okhttpPersenter.okhttpYGCate();
+
+    }
+    @OnClick(R.id.get_yg_version_bt)
+    public void onclickYougouVersionhttp(){
+
+        okhttpPersenter.okhttpYGVersion();
+
+    }
+    @OnClick(R.id.get_yg_detail_bt)
+    public void onclickYougouDetailOkhttp(){
         print("test");
-      okhttpPersenter.okhttpGet();
+        okhttpPersenter.okhttpYGDetail();
 
     }
 

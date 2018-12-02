@@ -129,8 +129,8 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
         String tokenStr = "860962035785914_dc:09:4c:d6:f9:63";
         String ran = System.currentTimeMillis() + "";
         String token = RSAEncryptionUtil.sign(tokenStr + "_" + ran);
-        print(tokenStr + " " + ran + "  " + token);
-        print("test==useragin==" + getUserAgent());
+     //   print(tokenStr + "  -- " + ran + "  " + token);
+      //  print("test==useragin==" + getUserAgent());
   Headers.Builder builder =new Headers.Builder()
         .add("User-Agent", getUserAgent())
                 .add("Udid", "dc:09:4c:d6:f9:63")//Udid=dc:09:4c:d6:f9:63

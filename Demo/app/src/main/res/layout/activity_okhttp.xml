@@ -12,9 +12,38 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/get_okhttp_bt"
         android:layout_gravity="center_horizontal"
         android:text="GET" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/get_yg_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="yougou" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/get_yg_version_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="yougou_version" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/get_yg_catebt"
+        android:layout_gravity="center_horizontal"
+        android:text="yougou_cate" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/get_yg_detail_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="yougou_detail" />
 
 </LinearLayout>

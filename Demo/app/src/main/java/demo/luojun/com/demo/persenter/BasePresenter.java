@@ -2,10 +2,13 @@ package demo.luojun.com.demo.persenter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.orhanobut.logger.Logger;
 
+import demo.luojun.com.demo.MainActivity;
+import demo.luojun.com.demo.network.NetworkActivity;
 import demo.luojun.com.demo.utils.ToastUtils;
 import demo.luojun.com.demo.view.BaseView;
 
@@ -82,6 +85,13 @@ public class BasePresenter<V extends BaseView> {
 
     }
 
+    /**
+     * 跳转页面
+     * @param clss
+     */
+    public   void jumpActivity(Class clss){
+       getThisContext(). startActivity( new Intent(getThisContext(), clss));
+    }
 
     /**
      * 截断输出日志
