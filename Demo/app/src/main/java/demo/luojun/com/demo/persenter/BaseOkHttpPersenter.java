@@ -18,79 +18,10 @@ import okhttp3.Response;
  */
 public class BaseOkHttpPersenter<V> extends BasePresenter {
 
-    public OkHttpClient getOkhttpClient() {
-        return new OkHttpClient();
+    protected void requestGetSync(String url, final int requestCode){
+        printLog(url);
+        requestGetSync(requestCode,getRequestYG(url));
     }
-
-    public OkHttpClient getOkhttpClientBulider() {
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(3 * 10000, TimeUnit.MILLISECONDS);//设置超时时间
-        return builder.build();
-    }
-
-    /**
-     * okhttp 同步get请求
-     *
-     * @param requestCode
-     * @param url
-     */
-    protected void requestGetSync(String url, final int requestCode) {
-        //test
-        final Call call = getOkhttpClient().newCall(getRequestYG(url));
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = call.execute();
-                    final String result = response.body().string();
-                    getThisActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            reponse(result, requestCode);
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
-
-    /**
-     * okhttp 异步get请求
-     *
-     * @param requestCode
-     * @param url
-     */
-    protected void requestGetAsyn(String url, final int requestCode) {
-        final Call call = getOkhttpClient().newCall(getRequestYG(url));
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {}
-
-            @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-                getThisActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            reponse(response.body().string(), requestCode);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            }
-        });
-    }
-
-    /**
-     * 返回数据
-     * @param result
-     * @param requestCode
-     */
-    protected void reponse(String result, int requestCode) {
- }
 
     public Request getRequestYG(String url) {
 
