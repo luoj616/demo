@@ -2,6 +2,7 @@ package demo.luojun.com.demo.persenter;
 
 import java.io.IOException;
 import java.security.PublicKey;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import demo.luojun.com.demo.utils.RSAEncryptionUtil;
@@ -108,6 +109,85 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
             }
         }
         return sb.toString();
+    }
+
+    @Override
+    protected void sendRequest(String url, Map map, int sendCode) {
+        requestGetSync(sendCode,getRequestYG(url));
+    }
+
+
+    public OkHttpClient getOkhttpClient() {
+        return new OkHttpClient();
+    }
+
+    public OkHttpClient getOkhttpClientBulider() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.connectTimeout(3 * 10000, TimeUnit.MILLISECONDS);//设置超时时间
+        return builder.build();
+    }
+
+    /**
+     * okhttp 同步get请求
+     *
+     * @param requestCode
+
+     */
+    protected void requestGetSync( final int requestCode,Request request) {
+        //test
+        final Call call = getOkhttpClient().newCall(request);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = call.execute();
+                    final String result = response.body().string();
+                    getThisActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            reponse(result, requestCode);
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    /**
+     * okhttp 异步get请求
+     *
+     * @param requestCode
+     */
+    protected void requestGetAsyn( final int requestCode, Request request) {
+        final Call call = getOkhttpClient().newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {}
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                getThisActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            reponse(response.body().string(), requestCode);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    /**
+     * 返回数据
+     * @param result
+     * @param requestCode
+     */
+    protected void reponse(String result, int requestCode) {
     }
 
 }

@@ -8,6 +8,7 @@ import android.util.Log;
 import com.orhanobut.logger.Logger;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import demo.luojun.com.demo.MainActivity;
@@ -25,7 +26,7 @@ import okhttp3.Response;
  * 控制器基类
  * Created by luo.j on 2018/3/27.
  */
-public class BasePresenter<V extends BaseView> {
+public abstract class BasePresenter<V extends BaseView> {
     /**
      * 绑定的view
      */
@@ -129,78 +130,9 @@ public class BasePresenter<V extends BaseView> {
     }
 
 
-    public OkHttpClient getOkhttpClient() {
-        return new OkHttpClient();
-    }
+    protected abstract  void sendRequest(String url ,Map<String ,String> map,int sendCode);
 
-    public OkHttpClient getOkhttpClientBulider() {
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(3 * 10000, TimeUnit.MILLISECONDS);//设置超时时间
-        return builder.build();
-    }
 
-    /**
-     * okhttp 同步get请求
-     *
-     * @param requestCode
-
-     */
-    protected void requestGetSync( final int requestCode,Request request) {
-        //test
-        final Call call = getOkhttpClient().newCall(request);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = call.execute();
-                    final String result = response.body().string();
-                    getThisActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            reponse(result, requestCode);
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
-
-    /**
-     * okhttp 异步get请求
-     *
-     * @param requestCode
-     */
-    protected void requestGetAsyn( final int requestCode, Request request) {
-        final Call call = getOkhttpClient().newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {}
-
-            @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-                getThisActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            reponse(response.body().string(), requestCode);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            }
-        });
-    }
-
-    /**
-     * 返回数据
-     * @param result
-     * @param requestCode
-     */
-    protected void reponse(String result, int requestCode) {
-    }
 
 
 }
