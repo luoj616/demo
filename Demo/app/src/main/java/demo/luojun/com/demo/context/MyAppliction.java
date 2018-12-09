@@ -16,7 +16,7 @@ import java.util.Stack;
  */
 public class MyAppliction extends Application {
     private static MyAppliction mInstance; //application 单例对象
-    public static boolean isTest = true;
+    public static boolean isDebug = true;
     private static Stack<Activity> activityStack;//栈对象
 
     @Override

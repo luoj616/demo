@@ -1,5 +1,7 @@
 package demo.luojun.com.demo.persenter;
 
+import java.util.Map;
+
 import demo.luojun.com.demo.utils.RSAEncryptionUtil;
 import demo.luojun.com.demo.view.BaseView;
 import okhttp3.Headers;
@@ -11,4 +13,8 @@ import okhttp3.Request;
 
 public class YouGouBasePersenter<V > extends BasePresenter {
 
+    @Override
+    protected void sendRequest(String url, Map map, int sendCode) {
+
+    }
 }
