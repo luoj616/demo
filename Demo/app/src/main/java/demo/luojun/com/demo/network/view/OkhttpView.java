@@ -1,4 +1,4 @@
-package demo.luojun.com.demo.view;
+package demo.luojun.com.demo.network.view;
 
 /**
  * Created by luo.j on 2018/6/12.

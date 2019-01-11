@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.context.BaseActivity;
 import demo.luojun.com.demo.network.NetworkActivity;
+import demo.luojun.com.demo.viewactivity.WidgetActivity;
 
 public class MainActivity extends BaseActivity{
 
@@ -31,19 +32,20 @@ public class MainActivity extends BaseActivity{
     public void test() {
         Toast.makeText(this,"test",Toast.LENGTH_LONG).show();
         jump();
+        startActivity(new Intent(this, WidgetActivity.class));
     }
 
     public void jump() {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        String guanzhu_URL = "http://weixin.qq.com/r/o3W_sRvEMSVOhwrSnyCH"; //这是你公共帐号的二维码的实际内容。可以用扫描软件扫一下就得到了。这是我的公共帐号地址。
-
-        i.setData(Uri.parse(guanzhu_URL)); //设置要传递的内容。
-
-        i.setPackage("com.tencent.mm"); //直接制定要发送到的程序的包名。也可以不制定。就会弹出程序选择器让你手动选木程序。
-
-     //   i.putExtra(Intent.EXTRASUBJECT,"Share"); i.setFlags(Intent.FLAGACTIVITYNEWTASK);
-
-        startActivity(i); //当然要在Activity界面 调用了。
+//        Intent i = new Intent(Intent.ACTION_VIEW);
+//        String guanzhu_URL = "http://weixin.qq.com/r/o3W_sRvEMSVOhwrSnyCH"; //这是你公共帐号的二维码的实际内容。可以用扫描软件扫一下就得到了。这是我的公共帐号地址。
+//
+//        i.setData(Uri.parse(guanzhu_URL)); //设置要传递的内容。
+//
+//        i.setPackage("com.tencent.mm"); //直接制定要发送到的程序的包名。也可以不制定。就会弹出程序选择器让你手动选木程序。
+//
+//     //   i.putExtra(Intent.EXTRASUBJECT,"Share"); i.setFlags(Intent.FLAGACTIVITYNEWTASK);
+//
+//        startActivity(i); //当然要在Activity界面 调用了。
 }
 
 }

@@ -1,4 +1,4 @@
-package demo.luojun.com.demo.view;
+package demo.luojun.com.demo.network.view;
 
 import android.content.Context;
 

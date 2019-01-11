@@ -6,9 +6,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.context.BaseActivity;
-import demo.luojun.com.demo.persenter.OkhttpPersenter;
-import demo.luojun.com.demo.view.OkhttpView;
-import okhttp3.OkHttpClient;
+import demo.luojun.com.demo.network.persenter.OkhttpPersenter;
+import demo.luojun.com.demo.network.view.OkhttpView;
 
 public class OkhttpActivity extends BaseActivity implements OkhttpView {
     private OkhttpPersenter okhttpPersenter;

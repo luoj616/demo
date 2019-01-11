@@ -1,7 +1,7 @@
-package demo.luojun.com.demo.persenter;
+package demo.luojun.com.demo.network.persenter;
 
 import demo.luojun.com.demo.context.AppServerAPI;
-import demo.luojun.com.demo.view.OkhttpView;
+import demo.luojun.com.demo.network.view.OkhttpView;
 
 /**
  * Created by luo.j on 2018/6/14.

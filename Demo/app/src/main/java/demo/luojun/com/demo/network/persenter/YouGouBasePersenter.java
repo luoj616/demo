@@ -1,9 +1,9 @@
-package demo.luojun.com.demo.persenter;
+package demo.luojun.com.demo.network.persenter;
 
 import java.util.Map;
 
 import demo.luojun.com.demo.utils.RSAEncryptionUtil;
-import demo.luojun.com.demo.view.BaseView;
+import demo.luojun.com.demo.network.view.BaseView;
 import okhttp3.Headers;
 import okhttp3.Request;
 

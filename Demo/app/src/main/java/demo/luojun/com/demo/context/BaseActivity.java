@@ -9,9 +9,9 @@ import com.orhanobut.logger.Logger;
 
 import java.util.Map;
 
-import demo.luojun.com.demo.persenter.BasePresenter;
+import demo.luojun.com.demo.network.persenter.BasePresenter;
 import demo.luojun.com.demo.utils.ToastUtils;
-import demo.luojun.com.demo.view.BaseView;
+import demo.luojun.com.demo.network.view.BaseView;
 
 public class BaseActivity extends AppCompatActivity implements BaseView {
       protected BasePresenter basePresenter;
