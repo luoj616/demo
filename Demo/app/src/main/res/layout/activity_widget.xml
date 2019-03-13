@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="demo.luojun.com.demo.viewactivity.WidgetActivity">
-    <demo.luojun.com.demo.widget.CounterView
-        android:layout_width="100dp"
+    tools:context=".activity.viewactivity.WidgetActivity">
+    <demo.luojun.com.demo.widget.custom.CounterView
+        android:layout_width="match_parent"
+        android:id="@+id/counter_view"
         android:layout_centerInParent="true"
-        android:layout_height="100dp" />
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

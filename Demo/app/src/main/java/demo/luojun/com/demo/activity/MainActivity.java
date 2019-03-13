@@ -1,16 +1,15 @@
-package demo.luojun.com.demo;
+package demo.luojun.com.demo.activity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.context.BaseActivity;
 import demo.luojun.com.demo.network.NetworkActivity;
-import demo.luojun.com.demo.viewactivity.WidgetActivity;
+import demo.luojun.com.demo.activity.viewactivity.WidgetActivity;
 
 public class MainActivity extends BaseActivity{
 
