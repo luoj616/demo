@@ -7,6 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -86,8 +88,9 @@ public class CounterView extends View implements View.OnClickListener
 
      @Override
         public void onClick(View v) {
-            mCount++;
 
+            mCount++;
+             LogPrint.debugError("-----view onclick----------"+mCount);
             // 重绘
             invalidate();
         }
@@ -96,6 +99,30 @@ public class CounterView extends View implements View.OnClickListener
      protected void onLayout(boolean changed, int l, int t, int r, int b) {
          super.onLayout(changed,l,t,r,b);
          LogPrint.debugError("------onLayoute--");
+     }
+
+
+     @Override
+     public boolean dispatchTouchEvent(MotionEvent event) {
+         LogPrint.debugError("--view dispatchTouchEvent----");
+         return super.dispatchTouchEvent(event);
+     }
+
+     @Override
+     public boolean onTouchEvent(MotionEvent event) {
+         LogPrint.debugError("--view -- onTouchEvent----");
+         switch (event.getAction()){
+             case MotionEvent.ACTION_DOWN:
+                 LogPrint.debugError("按下------------");
+                 break;
+             case MotionEvent.ACTION_MOVE:
+                 LogPrint.debugError("移动——————————————————————————");
+                 break;
+             case MotionEvent.ACTION_UP:
+                 LogPrint.debugError("刚开---------");
+                 break;
+         }
+         return super.onTouchEvent(event);
      }
  }
 /*        LogPrint.debugError(DensityUtil.dip2px(context,100)+"---"+context.getResources().getDisplayMetrics().density);

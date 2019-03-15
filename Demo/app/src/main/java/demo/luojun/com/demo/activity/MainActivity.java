@@ -7,8 +7,9 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
+import demo.luojun.com.demo.activity.viewactivity.MotionEventActivity;
 import demo.luojun.com.demo.context.BaseActivity;
-import demo.luojun.com.demo.network.NetworkActivity;
+import demo.luojun.com.demo.activity.networkactivity.NetworkActivity;
 import demo.luojun.com.demo.activity.viewactivity.WidgetActivity;
 
 public class MainActivity extends BaseActivity{
@@ -24,6 +25,12 @@ public class MainActivity extends BaseActivity{
     public void networkBt() {
         //startActivity(new Intent(MainActivity.this, NetworkActivity.class));
         basePresenter.jumpActivity(NetworkActivity.class);
+    }
+
+    @OnClick(R.id.event_bt)
+    public void motionEventBt() {
+        //startActivity(new Intent(MainActivity.this, NetworkActivity.class));
+        basePresenter.jumpActivity(MotionEventActivity.class);
     }
 
 

@@ -23,16 +23,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".network.NetworkActivity"
+            android:name=".activity.networkactivity.NetworkActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".network.OkhttpActivity"
+            android:name=".activity.networkactivity.OkhttpActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.viewactivity.WidgetActivity"></activity>
+        <activity android:name=".activity.viewactivity.WidgetActivity" />
+        <activity android:name=".activity.viewactivity.MotionEventActivity"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import com.orhanobut.logger.Logger;
 import java.util.Map;
 
 import demo.luojun.com.demo.network.persenter.BasePresenter;
+import demo.luojun.com.demo.utils.LogPrint;
 import demo.luojun.com.demo.utils.ToastUtils;
 import demo.luojun.com.demo.network.view.BaseView;
 
@@ -42,6 +43,9 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
 
     protected  void priintLog(String info){
         Log.e("info", info );
+    }
+    protected void err(String info){
+        LogPrint.debugError(info);
     }
 
     protected void toast(String info){
