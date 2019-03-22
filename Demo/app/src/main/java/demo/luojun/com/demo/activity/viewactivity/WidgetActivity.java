@@ -1,11 +1,13 @@
 package demo.luojun.com.demo.activity.viewactivity;
 
+import android.app.Service;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.context.BaseActivity;
@@ -19,11 +21,16 @@ public class WidgetActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_widget);
         counterView = (CounterView) findViewById(R.id.counter_view);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.main_layout);
         LogPrint.debugError(counterView.getMeasuredHeight()+"-------*****---------------"+counterView.getMeasuredWidth());
 
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View view = layoutInflater.inflate(R.layout.activity_main,null,false);
-
+        View view = layoutInflater.inflate(R.layout.button_view,null,false);
+        LayoutInflater layoutInfater1 = LayoutInflater.from(this);
+        View view1 =layoutInfater1.inflate(R.layout.activity_main,null,false);
+        LayoutInflater layoutInflater1 = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            relativeLayout.addView(view);
+        err("------------------------"+relativeLayout.getParent());
         LayoutInflater flater1 = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

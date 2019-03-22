@@ -8,6 +8,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.activity.viewactivity.MotionEventActivity;
+import demo.luojun.com.demo.activity.viewactivity.MyListviewActivity;
+import demo.luojun.com.demo.activity.viewactivity.SimpleLayoutActivity;
+import demo.luojun.com.demo.activity.viewactivity.TitleActivity;
 import demo.luojun.com.demo.context.BaseActivity;
 import demo.luojun.com.demo.activity.networkactivity.NetworkActivity;
 import demo.luojun.com.demo.activity.viewactivity.WidgetActivity;
@@ -40,7 +43,20 @@ public class MainActivity extends BaseActivity{
         jump();
         startActivity(new Intent(this, WidgetActivity.class));
     }
-
+    @OnClick(R.id.simple_layout_bt)
+    public void simplaLayout() {
+        Toast.makeText(this,"test",Toast.LENGTH_LONG).show();
+        jump();
+        startActivity(new Intent(this, SimpleLayoutActivity.class));
+    }
+    @OnClick(R.id.title_view_bt)
+    public void titleView(){
+        basePresenter.jumpActivity(TitleActivity.class);
+    }
+    @OnClick(R.id.my_listview_bt)
+    public  void myListView (){
+        basePresenter.jumpActivity(MyListviewActivity.class);
+    }
     public void jump() {
 //        Intent i = new Intent(Intent.ACTION_VIEW);
 //        String guanzhu_URL = "http://weixin.qq.com/r/o3W_sRvEMSVOhwrSnyCH"; //这是你公共帐号的二维码的实际内容。可以用扫描软件扫一下就得到了。这是我的公共帐号地址。

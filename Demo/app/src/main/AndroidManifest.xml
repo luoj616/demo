@@ -33,7 +33,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.viewactivity.WidgetActivity" />
-        <activity android:name=".activity.viewactivity.MotionEventActivity"></activity>
+        <activity android:name=".activity.viewactivity.MotionEventActivity" />
+        <activity
+            android:name=".activity.viewactivity.SimpleLayoutActivity"
+            android:label="@string/title_activity_simple_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.viewactivity.TitleActivity"
+            android:label="@string/title_activity_simple_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.viewactivity.MyListviewActivity"></activity>
     </application>
 
 </manifest>
