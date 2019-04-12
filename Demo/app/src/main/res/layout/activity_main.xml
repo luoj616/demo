@@ -21,36 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:id="@+id/test_bt"
+        android:id="@+id/custom_view_bt"
         android:layout_gravity="center_horizontal"
-        android:text="网络test" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/event_bt"
-        android:layout_gravity="center_horizontal"
-        android:text="时间分发test" />
-    <Button
-        android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:id="@+id/simple_layout_bt"
-    android:layout_gravity="center_horizontal"
-    android:text="simpleLayout" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/title_view_bt"
-        android:layout_gravity="center_horizontal"
-        android:text="title_view" />
+        android:text="自定义view" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/my_listview_bt"
-        android:layout_gravity="center_horizontal"
-        android:text="tmylistview" />
 </LinearLayout>

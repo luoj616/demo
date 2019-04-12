@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="demo.luojun.com.demo.activity.viewactivity.CustomViewActivity">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/test_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="网络test" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/event_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="时间分发test" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/simple_layout_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="simpleLayout" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/title_view_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="title_view" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/my_listview_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="tmylistview" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/custom_title_view_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="CustomTitleView" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/circle_textview_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="CircleTextView" />
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <resources>
+    <attr name="secondColor" format="color"/>
+    <attr name="firstColor" format="color"/>
+    <attr name="circleWidth" format="dimension"/>
+    <attr name="speed" format="integer"/>
+    <declare-styleable name="CustomProgressBar">
+        <attr name="secondColor"/>
+        <attr name="firstColor"/>
+        <attr name="circleWidth"/>
+        <attr name="speed"/>
+    </declare-styleable>
+    
+    
+    
+    <!--customTitleView -->
+    <attr name="titleText" format="string"></attr>
+    <attr name="titleTextColor" format="color"/>
+    <attr name="titleTextSize" format="dimension"/>
+    <attr name="imageScaleType">
+        <enum name="fitXY" value="0"></enum>
+        <enum name="center" value="1"/>
+    </attr>
+    <attr name="image" format="reference"/>
+    <declare-styleable name="CustomTitleView">
+        <attr name="titleText"/>
+        <attr name="titleTextColor"/>
+        <attr name="titleTextSize" />
+        <attr name="image"/>
+        <attr name="imageScaleType"/>
+    </declare-styleable>
+    <!--自定义circle 背景 textView-->
+    <declare-styleable name="CustomCircleText">
+        <attr name="mTextSize" format="dimension"></attr>
+        <attr name="mTextColor" format="color"></attr>
+        <attr name="mBackGroudColor" format="color"/>
+        <attr name="mRound" format="dimension"/>
+        <attr name="mText" format="string"/>
+    </declare-styleable>
+</resources>

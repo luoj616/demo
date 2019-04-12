@@ -7,6 +7,8 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
+import demo.luojun.com.demo.activity.viewactivity.CustomTitleViewActivity;
+import demo.luojun.com.demo.activity.viewactivity.CustomViewActivity;
 import demo.luojun.com.demo.activity.viewactivity.MotionEventActivity;
 import demo.luojun.com.demo.activity.viewactivity.MyListviewActivity;
 import demo.luojun.com.demo.activity.viewactivity.SimpleLayoutActivity;
@@ -30,32 +32,10 @@ public class MainActivity extends BaseActivity{
         basePresenter.jumpActivity(NetworkActivity.class);
     }
 
-    @OnClick(R.id.event_bt)
-    public void motionEventBt() {
+    @OnClick(R.id.custom_view_bt)
+    public void customViewBt() {
         //startActivity(new Intent(MainActivity.this, NetworkActivity.class));
-        basePresenter.jumpActivity(MotionEventActivity.class);
-    }
-
-
-    @OnClick(R.id.test_bt)
-    public void test() {
-        Toast.makeText(this,"test",Toast.LENGTH_LONG).show();
-        jump();
-        startActivity(new Intent(this, WidgetActivity.class));
-    }
-    @OnClick(R.id.simple_layout_bt)
-    public void simplaLayout() {
-        Toast.makeText(this,"test",Toast.LENGTH_LONG).show();
-        jump();
-        startActivity(new Intent(this, SimpleLayoutActivity.class));
-    }
-    @OnClick(R.id.title_view_bt)
-    public void titleView(){
-        basePresenter.jumpActivity(TitleActivity.class);
-    }
-    @OnClick(R.id.my_listview_bt)
-    public  void myListView (){
-        basePresenter.jumpActivity(MyListviewActivity.class);
+        basePresenter.jumpActivity(CustomViewActivity.class);
     }
     public void jump() {
 //        Intent i = new Intent(Intent.ACTION_VIEW);
