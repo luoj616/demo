@@ -49,13 +49,13 @@
         android:layout_marginTop="10dp"
         android:id="@+id/custom_title_view_bt"
         android:layout_gravity="center_horizontal"
-        android:text="CustomTitleView" />
+        android:text="自定义view-CustomTitleView" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:id="@+id/circle_textview_bt"
         android:layout_gravity="center_horizontal"
-        android:text="CircleTextView" />
+        android:text="自定义圆textView" />
 
 </LinearLayout>

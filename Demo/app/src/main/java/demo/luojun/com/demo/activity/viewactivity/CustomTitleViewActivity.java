@@ -6,6 +6,12 @@ import android.os.Bundle;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.context.BaseActivity;
 
+/**
+ * 自定义view
+ * 1:自定义view
+ * 2:自定义progrogressBar
+ */
+
 public class CustomTitleViewActivity extends BaseActivity {
 
     @Override

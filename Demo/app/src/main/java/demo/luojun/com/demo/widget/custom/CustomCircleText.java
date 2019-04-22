@@ -94,6 +94,8 @@ public class CustomCircleText extends View {
 
         mPaint.setColor(mTextColor);
         mPaint.setTextSize(mTextSize);
+
+        //如果setTextSize.那么paint .getTextBounds必须放在其后面。才能测量的准确
         mPaint.getTextBounds(mText,0,mText.length(),rect);
         DisplayMetrics dm = getContext().getResources().getDisplayMetrics();
         Log.e("info", dm.density+"=====onDraw: "+getWidth()+"---"+getMeasuredWidth() );

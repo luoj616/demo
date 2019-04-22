@@ -6,6 +6,7 @@
 
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--z自定义 view-->
     <demo.luojun.com.demo.widget.custom.CustomTitleView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +16,7 @@
           android:padding="30dp"
         custom:titleTextColor="#ff0000"
         custom:titleTextSize="40sp"/>
+    <!--自定义progrogressBar-->
     <demo.luojun.com.demo.widget.custom.CustomProgressBar
         android:layout_width="200dp"
         android:layout_height="200dp"

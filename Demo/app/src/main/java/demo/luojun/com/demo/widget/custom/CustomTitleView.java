@@ -24,6 +24,7 @@ import demo.luojun.com.demo.R;
 
 /**
  * Created by luo.j on 2019/4/9.
+ * 自定义view。上面图片。下面文字
  */
 
 public class CustomTitleView extends View {

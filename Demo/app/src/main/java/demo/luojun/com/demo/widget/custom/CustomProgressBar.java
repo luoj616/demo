@@ -15,6 +15,7 @@ import demo.luojun.com.demo.R;
 
 /**
  * Created by luo.j on 2019/4/10.
+ * 自定义progressBar
  */
 
 public class CustomProgressBar extends View {

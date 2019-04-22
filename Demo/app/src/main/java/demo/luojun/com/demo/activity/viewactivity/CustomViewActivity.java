@@ -57,10 +57,14 @@ public class CustomViewActivity extends BaseActivity {
         basePresenter.jumpActivity(TitleActivity.class);
     }
 
+    /**
+     * 自定义view
+     */
     @OnClick(R.id.custom_title_view_bt)
     public void customTileView(){
         basePresenter.jumpActivity(CustomTitleViewActivity.class);
     }
+
     @OnClick(R.id.my_listview_bt)
     public  void myListView (){
         basePresenter.jumpActivity(MyListviewActivity.class);

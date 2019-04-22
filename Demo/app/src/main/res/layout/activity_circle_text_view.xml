@@ -3,16 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="demo.luojun.com.demo.activity.viewactivity.CircleTextViewActivity">
+    <!--自定义圆-->
     <demo.luojun.com.demo.widget.custom.CustomCircleText
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:mText="你好我们不"
-
+        android:layout_margin="8dp"
         app:mTextColor="@color/colorPrimary"
         app:mTextSize="16sp"
         app:mBackGroudColor="#F00"/>
+<!--继承textview-->
+<demo.luojun.com.demo.widget.custom.CustomCircleTextView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:text="你好我们不"
+   android:gravity="center"
+    android:layout_margin="8dp"
+    android:textColor="@color/colorPrimary"
 
+ />
+<!--自定义shape-->
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="shape"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_circle"/>
 
 </LinearLayout>
