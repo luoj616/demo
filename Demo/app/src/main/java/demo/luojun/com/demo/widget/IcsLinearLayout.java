@@ -1,4 +1,4 @@
-package com.yougou.view;
+package demo.luojun.com.demo.widget;
 
 import android.app.Activity;
 import android.content.Context;
@@ -210,7 +210,7 @@ class IcsLinearLayout extends LinearLayout {
             {
             	View view=getChildAt(i);
 				view.measure(MeasureSpec.makeMeasureSpec(
-						view.getMeasuredWidth() + (windowsWidth - wdithAll)/ size, MeasureSpec.EXACTLY), 
+						view.getMeasuredWidth() + (windowsWidth - wdithAll)/ size, MeasureSpec.EXACTLY),
 						MeasureSpec.makeMeasureSpec(view.getMeasuredHeight(), MeasureSpec.EXACTLY));
             }
         }

@@ -14,12 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.yougou.view;
+package demo.luojun.com.demo.widget;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -31,10 +28,10 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.yougou.R;
-import com.yougou.activity.MainActivity;
-import com.yougou.adapter.IconPagerAdapter;
-import com.yougou.tools.MyApplication;
+import demo.luojun.com.demo.R;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * This widget implements the dynamic action bar tab behavior that can change
@@ -252,7 +249,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         	tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
 
 		}
-        ((TextView)mTabLayout.getChildAt(item)).setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);       
+        ((TextView)mTabLayout.getChildAt(item)).setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         //--!
     }
 

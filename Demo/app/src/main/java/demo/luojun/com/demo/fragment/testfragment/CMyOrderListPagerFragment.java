@@ -1,9 +1,8 @@
 package demo.luojun.com.demo.fragment.testfragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ public class CMyOrderListPagerFragment extends BaseFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+ private Activity context;
 
 
 
@@ -41,13 +40,10 @@ public class CMyOrderListPagerFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-       FragmentManager fragmentManager = getChildFragmentManager();
-        fragmentManager.beginTransaction();
-        Fragment fragment =getParentFragment();
+
+//       FragmentManager fragmentManager = getChildFragmentManager();
+//        fragmentManager.beginTransaction();
+//        Fragment fragment =getParentFragment();
     }
 
     @Override
@@ -62,7 +58,11 @@ public class CMyOrderListPagerFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
+        this.context = (Activity) context;
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
 

@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="demo.luojun.com.demo.activity.fragmentactivity.GuideActivity">
 
-</android.support.constraint.ConstraintLayout>
+    tools:context="demo.luojun.com.demo.activity.fragmentactivity.GuideActivity">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+    <LinearLayout
+        android:id="@+id/dot_Layout"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:layout_marginBottom="50dp"></LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/container_btn_next"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:background="#fffd4765"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即体验"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="3dp"
+            android:src="@mipmap/ic_right"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

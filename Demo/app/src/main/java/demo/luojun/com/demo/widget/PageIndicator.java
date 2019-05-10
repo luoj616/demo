@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.yougou.view;
+package demo.luojun.com.demo.widget;
 
 import android.support.v4.view.ViewPager;
 

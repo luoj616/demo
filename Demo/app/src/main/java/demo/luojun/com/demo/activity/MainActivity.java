@@ -1,21 +1,14 @@
 package demo.luojun.com.demo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
-import demo.luojun.com.demo.activity.viewactivity.CustomTitleViewActivity;
-import demo.luojun.com.demo.activity.viewactivity.CustomViewActivity;
-import demo.luojun.com.demo.activity.viewactivity.MotionEventActivity;
-import demo.luojun.com.demo.activity.viewactivity.MyListviewActivity;
-import demo.luojun.com.demo.activity.viewactivity.SimpleLayoutActivity;
-import demo.luojun.com.demo.activity.viewactivity.TitleActivity;
-import demo.luojun.com.demo.context.BaseActivity;
+import demo.luojun.com.demo.activity.fragmentactivity.FragmentActivity;
 import demo.luojun.com.demo.activity.networkactivity.NetworkActivity;
-import demo.luojun.com.demo.activity.viewactivity.WidgetActivity;
+import demo.luojun.com.demo.activity.viewactivity.CustomViewActivity;
+import demo.luojun.com.demo.context.BaseActivity;
 
 public class MainActivity extends BaseActivity{
 
@@ -37,6 +30,16 @@ public class MainActivity extends BaseActivity{
         //startActivity(new Intent(MainActivity.this, NetworkActivity.class));
         basePresenter.jumpActivity(CustomViewActivity.class);
     }
+    @OnClick(R.id.fragment_bt)
+    public void fragmentBt(){
+        basePresenter.jumpActivity(FragmentActivity.class);
+    }
+
+
+
+
+
+
     public void jump() {
 //        Intent i = new Intent(Intent.ACTION_VIEW);
 //        String guanzhu_URL = "http://weixin.qq.com/r/o3W_sRvEMSVOhwrSnyCH"; //这是你公共帐号的二维码的实际内容。可以用扫描软件扫一下就得到了。这是我的公共帐号地址。

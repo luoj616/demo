@@ -45,7 +45,10 @@
         <activity android:name=".activity.viewactivity.MyListviewActivity" />
         <activity android:name=".activity.viewactivity.CustomTitleViewActivity" />
         <activity android:name=".activity.viewactivity.CustomViewActivity" />
-        <activity android:name=".activity.viewactivity.CircleTextViewActivity"></activity>
+        <activity android:name=".activity.viewactivity.CircleTextViewActivity" />
+        <activity android:name=".activity.fragmentactivity.GuideActivity" />
+        <activity android:name=".activity.fragmentactivity.FragmentActivity" />
+        <activity android:name=".activity.fragmentactivity.ViewPagerActivity"></activity>
     </application>
 
 </manifest>

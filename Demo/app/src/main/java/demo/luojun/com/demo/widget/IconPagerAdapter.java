@@ -1,4 +1,4 @@
-package com.yougou.adapter;
+package demo.luojun.com.demo.widget;
 
 public interface IconPagerAdapter {
     /**

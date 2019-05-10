@@ -24,5 +24,12 @@
         android:id="@+id/custom_view_bt"
         android:layout_gravity="center_horizontal"
         android:text="自定义view" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/fragment_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="fragment" />
 
 </LinearLayout>
