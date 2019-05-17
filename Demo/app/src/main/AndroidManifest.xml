@@ -48,7 +48,10 @@
         <activity android:name=".activity.viewactivity.CircleTextViewActivity" />
         <activity android:name=".activity.fragmentactivity.GuideActivity" />
         <activity android:name=".activity.fragmentactivity.FragmentActivity" />
-        <activity android:name=".activity.fragmentactivity.ViewPagerActivity"></activity>
+        <activity android:name=".activity.fragmentactivity.ViewPagerActivity" />
+        <activity android:name=".activity.networkactivity.OkHttpUtilsActivity" />
+        <activity android:name=".activity.testactivity.BuildActivity" />
+        <activity android:name=".activity.testactivity.TestActivity"></activity>
     </application>
 
 </manifest>

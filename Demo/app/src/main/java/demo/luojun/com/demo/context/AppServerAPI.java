@@ -16,7 +16,7 @@ public class AppServerAPI {
    //YOUGOU
     public static final String YG_VERSION = "http://mobile.yougou.com/v_1.8/version";
     public static final String YG_categories4all = "http://mobile.yougou.com/v_1.8/categories4all";
-    public static final String YG_commodityDetail = "http://mobile.yougou.com/v_1.8/commodityDetail?productid=99890025";
+    public static final String YG_commodityDetail = "http://mobile.yougou.com/v_1.8/commodityDetail";
     public static final String YG_CHANELS = "http://mobile.yougou.com/v_1.8/channels";
 
 

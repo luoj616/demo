@@ -20,4 +20,11 @@ public class NetworkActivity extends BaseActivity {
     public void networkBt(){
         startActivity(new Intent(this, OkhttpActivity.class));
     }
+
+
+    @OnClick(R.id.okhttputils_bt)
+    public void okHttpUtilsOnClick(){
+
+            startActivity(new Intent(this, OkHttpUtilsActivity.class));
+    }
 }

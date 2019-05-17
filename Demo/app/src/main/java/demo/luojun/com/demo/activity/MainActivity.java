@@ -7,6 +7,7 @@ import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.activity.fragmentactivity.FragmentActivity;
 import demo.luojun.com.demo.activity.networkactivity.NetworkActivity;
+import demo.luojun.com.demo.activity.testactivity.TestActivity;
 import demo.luojun.com.demo.activity.viewactivity.CustomViewActivity;
 import demo.luojun.com.demo.context.BaseActivity;
 
@@ -37,7 +38,10 @@ public class MainActivity extends BaseActivity{
 
 
 
-
+    @OnClick(R.id.test_bt)
+    public void testBt(){
+        basePresenter.jumpActivity(TestActivity.class);
+    }
 
 
     public void jump() {

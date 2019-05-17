@@ -12,6 +12,7 @@ import demo.luojun.com.demo.network.view.OkhttpView;
 public class OkhttpActivity extends BaseActivity implements OkhttpView {
     private OkhttpPersenter okhttpPersenter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +21,16 @@ public class OkhttpActivity extends BaseActivity implements OkhttpView {
         okhttpPersenter =new OkhttpPersenter();
         okhttpPersenter.attachView(this);
         print("test");
+
+//        Message message= new Message();
+//        message.what=1;
+//        handler.sendMessage(message);
+
+
      //   OkHttpClient okHttpClient = new OkHttpClient();
+
     }
+
     @OnClick(R.id.get_okhttp_bt)
     public void onclickGetOkhttp(){
 

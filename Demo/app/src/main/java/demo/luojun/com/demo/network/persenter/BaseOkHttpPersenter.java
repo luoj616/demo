@@ -1,16 +1,20 @@
 package demo.luojun.com.demo.network.persenter;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.security.PublicKey;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import demo.luojun.com.demo.utils.RSAEncryptionUtil;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.Headers;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
@@ -19,14 +23,7 @@ import okhttp3.Response;
  */
 public class BaseOkHttpPersenter<V> extends BasePresenter {
 
-    protected void requestGetSync(String url, final int requestCode){
-        printLog(url);
-        requestGetSync(requestCode,getRequestYG(url));
-    }
-
     public Request getRequestYG(String url) {
-
-
         Request request = new Request.Builder()
                 .url(url)
      /*           .addHeader("User-Agent", getUserAgent())
@@ -111,20 +108,149 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
         return sb.toString();
     }
 
-    @Override
-    protected void sendRequest(String url, Map map, int sendCode) {
-        requestGetSync(sendCode,getRequestYG(url));
-    }
+
 
 
     public OkHttpClient getOkhttpClient() {
         return new OkHttpClient();
     }
 
-    public OkHttpClient getOkhttpClientBulider() {
+/*    public OkHttpClient getOkhttpClientBulider() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(3 * 10000, TimeUnit.MILLISECONDS);//设置超时时间
         return builder.build();
+    }*/
+
+    /**
+     * formbody数据格式post请求
+     * @param url
+     * @param parms
+     * @return
+     */
+    public Request getRequestYGPostForm(String url,Map<String,String> parms){
+    Request request= new Request.Builder()
+            .url(url)
+            .method("POST",getFormBody(parms))
+          //  .post(getFormBody(parms))
+            .headers(initHead())
+            .build();
+
+    return request;
+
+}
+    /**
+     * json数据格式post请求
+     * @param url
+     * @param parms
+     * @return
+     */
+    public Request getRequestYGPostJson(String url,Map<String,String> parms){
+        Request request= new Request.Builder()
+                .url(url)
+                .post(getRequestBody(parms))
+                .headers(initHead())
+                .build();
+
+        return request;
+
+    }
+
+    /**
+     * formBody数据请求
+     * @param parms
+     * @return
+     */
+    public FormBody getFormBody(Map<String,String> parms){
+    FormBody.Builder formBody =new FormBody.Builder();
+    for (String key : parms.keySet()) {
+   print("key= "+ key + " and value= " + parms.get(key));
+        formBody.add(key,parms.get(key));
+         }
+    return formBody.build();
+}
+
+    /**
+     * json数据请求
+     * @param parms
+     * @return
+     */
+    public RequestBody getRequestBody(Map<String,String> parms){
+    print("RequestBody===="+new JSONObject(parms).toString());
+    MediaType JSON = MediaType.parse("application/json; charset=utf-8");//数据类型为json格式，
+    RequestBody requestBody = RequestBody.create(JSON, new JSONObject(parms).toString());
+    return requestBody;
+}
+
+
+public  void requestPostSyncJson(String url,Map<String,String> parms,final int requestCode){
+    requestPostSync(requestCode,getRequestYGPostJson(url,parms));
+}
+    public  void requestPostSyncForm(String url,Map<String,String> parms,final int requestCode){
+        requestPostSync(requestCode,getRequestYGPostForm(url,parms));
+    }
+    /**
+     * okhttp  同步post请求
+     * @param requestCode
+     * @param request
+     */
+
+ public void    requestPostSync(final int requestCode, final Request request){
+          new Thread(new Runnable() {
+              @Override
+              public void run() {
+                  try {
+                      Response response =getOkhttpClient().newCall(request).execute();
+                      final String result = response.body().string();
+                      getThisActivity().runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              reponse(result, requestCode);
+                          }
+                      });
+                  } catch (IOException e) {
+                      e.printStackTrace();
+                  }
+              }
+          }).start();
+ }
+
+ public void requestPosyAysn(final int requestCode, final Request request){
+     getOkhttpClient().newCall(request).enqueue(new Callback() {
+         @Override
+         public void onFailure(Call call, IOException e) {
+
+         }
+
+         @Override
+         public void onResponse(Call call, final Response response) throws IOException {
+             getThisActivity().runOnUiThread(new Runnable() {
+                 @Override
+                 public void run() {
+                     try {
+                         reponse(response.body().string(), requestCode);
+                     } catch (IOException e) {
+                         e.printStackTrace();
+                     }
+                 }
+             });
+         }
+     });
+ }
+
+
+
+
+
+
+
+
+    protected void requestGetSync(String url, final int requestCode){
+        printLog(url);
+        requestGetSync(requestCode,getRequestYG(url));
+    }
+    @Override
+    protected void sendRequest(String url, Map map, int sendCode) {
+        requestGetSync(sendCode,getRequestYG(url));
     }
 
     /**
