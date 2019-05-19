@@ -51,7 +51,8 @@
         <activity android:name=".activity.fragmentactivity.ViewPagerActivity" />
         <activity android:name=".activity.networkactivity.OkHttpUtilsActivity" />
         <activity android:name=".activity.testactivity.BuildActivity" />
-        <activity android:name=".activity.testactivity.TestActivity"></activity>
+        <activity android:name=".activity.testactivity.TestActivity" />
+        <activity android:name=".activity.testactivity.HandlerActivity"></activity>
     </application>
 
 </manifest>
