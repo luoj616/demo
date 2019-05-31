@@ -24,4 +24,12 @@
         android:id="@+id/okhttputils_bt"
         android:layout_gravity="center_horizontal"
         android:text="OkHttpUtils" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/socket_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="socket" />
 </LinearLayout>

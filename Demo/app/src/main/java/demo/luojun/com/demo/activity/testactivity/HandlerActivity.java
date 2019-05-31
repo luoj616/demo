@@ -216,6 +216,7 @@ public class HandlerActivity extends BaseActivity {
             try {
                 URL url =new URL(params[0]);
                 if(url!=null){
+                    url.openConnection(null);
                     httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setRequestMethod("GET");
                     httpURLConnection.setConnectTimeout(10000);

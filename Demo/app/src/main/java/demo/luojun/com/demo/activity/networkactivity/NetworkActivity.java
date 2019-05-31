@@ -27,4 +27,10 @@ public class NetworkActivity extends BaseActivity {
 
             startActivity(new Intent(this, OkHttpUtilsActivity.class));
     }
+
+    @OnClick(R.id.socket_bt)
+    public void socketOnClick(){
+
+        startActivity(new Intent(this, SocketActivity.class));
+    }
 }

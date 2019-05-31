@@ -246,6 +246,8 @@ public  void requestPostSyncJson(String url,Map<String,String> parms,final int r
 
     protected void requestGetSync(String url, final int requestCode){
         printLog(url);
+        printLog("-@@@@@@--"+getRequestYG(url).url().port()+"----------------"+getOkhttpClient().proxy());
+        printLog(getRequestYG(url).url().host()+"----------------"+getRequestYG(url).url().username());
         requestGetSync(requestCode,getRequestYG(url));
     }
     @Override
@@ -261,12 +263,20 @@ public  void requestPostSyncJson(String url,Map<String,String> parms,final int r
      */
     protected void requestGetSync( final int requestCode,Request request) {
         //test
-        final Call call = getOkhttpClient().newCall(request);
+       final OkHttpClient httpClient = new OkHttpClient();
+        final Call call = httpClient.newCall(request);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     Response response = call.execute();
+                    printLog("----____________________3______________------------");
+                    printLog(httpClient.proxy()+"---------1-------");
+                    printLog(httpClient.dns().lookup("mobile.yougou.com").get(0).getHostAddress()+"----------2------");
+                    printLog(httpClient.dns().lookup("mobile.yougou.com").get(0).getHostName()+"----------2------");
+                    printLog(new String(httpClient.dns().lookup("mobile.yougou.com").get(0).getAddress())+"----------2------");
+                    printLog(httpClient.dns().lookup("mobile.yougou.com").get(0).toString()+"----------2------");
                     final String result = response.body().string();
                     getThisActivity().runOnUiThread(new Runnable() {
                         @Override
