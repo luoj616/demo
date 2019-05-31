@@ -30,11 +30,14 @@ dependencies {
 
 
 
+
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.squareup.okio:okio:1.11.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.jakewharton:butterknife:8.5.1'
-   compile 'com.squareup.okhttp3:okhttp:3.6.0'
-    compile 'com.squareup.okio:okio:1.11.0'
     compile 'com.orhanobut:logger:2.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:25.3.1'

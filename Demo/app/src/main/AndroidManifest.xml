@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="com.onevo.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -73,7 +72,8 @@
         <activity android:name=".activity.testactivity.TestActivity" />
         <activity android:name=".activity.testactivity.HandlerActivity" />
         <activity android:name=".activity.testactivity.FileIoActivity" />
-        <activity android:name=".activity.networkactivity.SocketActivity"></activity>
+        <activity android:name=".activity.networkactivity.SocketActivity" />
+        <activity android:name=".activity.rxactivity.ObservableActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="demo.luojun.com.demo.activity.rxactivity.ObservableActivity">
+    <Button
+        android:text="observer"
+        android:id="@+id/observer_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="subscriber"
+    android:id="@+id/subscriber_bt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <Button
+        android:text="justObservable"
+        android:id="@+id/just_observable_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="formObservable"
+        android:id="@+id/from_observable_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

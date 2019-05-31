@@ -38,5 +38,12 @@
         android:id="@+id/test_bt"
         android:layout_gravity="center_horizontal"
         android:text="test" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/rxjava_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="rxjava" />
 
 </LinearLayout>
