@@ -26,5 +26,26 @@
         android:id="@+id/from_observable_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/action0_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="onCompleted" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/action1_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="onNext_onError" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/flatmap_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="flatmap" />
 </LinearLayout>

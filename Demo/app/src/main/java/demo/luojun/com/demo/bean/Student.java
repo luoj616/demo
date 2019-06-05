@@ -1,16 +1,40 @@
 package demo.luojun.com.demo.bean;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by luo.j on 2019/5/14.
  */
 
-public class Student implements Serializable {
+public class Student extends BaseBean {
     private int age;
     private String Name;
+    private List<Course> list;
+
+    public List<Course> getList() {
+        return list;
+    }
+
+    public void setList(List<Course> list) {
+        this.list = list;
+    }
+
     public void test(){}
     public Student(){};
+
+    public Student(boolean isInit){
+        if(isInit){
+            this.Name="--init Name-=";
+            this.age=20;
+            this.list= new ArrayList<>();
+            for(int i=0;i<5;i++){
+                Course course = new Course();
+                course.setCourseName("course=="+i);
+                this.list.add(course);
+            }
+        }
+    };
     public int getAge() {
         return age;
     }
@@ -57,5 +81,17 @@ public class Student implements Serializable {
                 "age=" + age +
                 ", Name='" + Name + '\'' +
                 '}';
+    }
+
+    public class Course{
+        private String courseName;
+
+        public String getCourseName() {
+            return courseName;
+        }
+
+        public void setCourseName(String courseName) {
+            this.courseName = courseName;
+        }
     }
 }

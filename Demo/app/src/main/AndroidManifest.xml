@@ -73,7 +73,8 @@
         <activity android:name=".activity.testactivity.HandlerActivity" />
         <activity android:name=".activity.testactivity.FileIoActivity" />
         <activity android:name=".activity.networkactivity.SocketActivity" />
-        <activity android:name=".activity.rxactivity.ObservableActivity"></activity>
+        <activity android:name=".activity.rxactivity.ObservableActivity" />
+        <activity android:name=".activity.testactivity.classActivity"></activity>
     </application>
 
 </manifest>

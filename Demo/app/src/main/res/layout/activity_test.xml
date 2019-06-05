@@ -21,4 +21,17 @@
         android:layout_marginTop="20dp"
         android:text="handler"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/file_io_bt"
+        android:layout_marginTop="20dp"
+        android:text="file_io"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/class_bt"
+        android:layout_marginTop="20dp"
+        android:text="class"/>
+
 </LinearLayout>
