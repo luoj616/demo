@@ -11,6 +11,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/filed_bt"
         android:text="class_filed"/>
-
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/constructor_bt"
+        android:text="构造器constructor"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mothed_type_bt"
+        android:text="方法属性mothedType"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/invoke_bt"
+        android:text="方法使用invoke"/>
 </LinearLayout>

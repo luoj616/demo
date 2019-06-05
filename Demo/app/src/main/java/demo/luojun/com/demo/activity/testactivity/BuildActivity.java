@@ -34,7 +34,7 @@ public class BuildActivity extends BaseActivity {
 
     @OnClick(R.id.builder_studen_bt)
     public void ctorOnClick(){
-        Student student=new Student();
+        Student student=new Student(false);
         Student.Builder builder = new Student.Builder();
    print( new Student.Builder().setAge(100).setName("weilai").build().toString());
     }

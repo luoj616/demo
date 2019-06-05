@@ -27,7 +27,7 @@ public class Builder implements Build {
     }
 
     public Student build(){
-        student= new Student();
+        student= new Student(false);
         student.setAge(age);
         student.setName(name);
         return student;

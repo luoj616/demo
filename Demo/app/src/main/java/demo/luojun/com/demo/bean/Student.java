@@ -83,7 +83,7 @@ public class Student extends BaseBean {
                 '}';
     }
 
-    public class Course{
+    public static class Course{
         private String courseName;
 
         public String getCourseName() {
