@@ -13,25 +13,25 @@
         android:id="@+id/build_bt"
 
         android:layout_marginTop="20dp"
-        android:text="build"/>
+        android:text="建造者设计模式：build"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/handler_bt"
         android:layout_marginTop="20dp"
-        android:text="handler"/>
+        android:text=" handler"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/file_io_bt"
         android:layout_marginTop="20dp"
-        android:text="file_io"/>
+        android:text="文件流-file_io"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/class_bt"
         android:layout_marginTop="20dp"
-        android:text="class"/>
+        android:text="反射-class"/>
 
 </LinearLayout>

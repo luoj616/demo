@@ -10,20 +10,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filed_bt"
-        android:text="class_filed"/>
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="属性filed"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/constructor_bt"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
         android:text="构造器constructor"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mothed_type_bt"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
         android:text="方法属性mothedType"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/invoke_bt"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
         android:text="方法使用invoke"/>
 </LinearLayout>

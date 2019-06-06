@@ -2,6 +2,7 @@ package demo.luojun.com.demo.bean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by luo.j on 2019/5/14.
@@ -11,6 +12,15 @@ public class Student extends BaseBean {
     private int age;
     private String Name;
     private List<Course> list;
+    private Map<String,String> map;
+
+    public Map<String, String> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, String> map) {
+        this.map = map;
+    }
 
     public List<Course> getList() {
         return list;
@@ -75,13 +85,6 @@ public class Student extends BaseBean {
              return new Student(this);
          }
      }
-    @Override
-    public String toString() {
-        return "Student{" +
-                "age=" + age +
-                ", Name='" + Name + '\'' +
-                '}';
-    }
 
     public static class Course{
         private String courseName;
@@ -93,5 +96,16 @@ public class Student extends BaseBean {
         public void setCourseName(String courseName) {
             this.courseName = courseName;
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "age=" + age +
+                ", Name='" + Name + '\'' +
+                ", list=" + list +
+                ", map=" + map +
+                '}';
     }
 }
