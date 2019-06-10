@@ -1,4 +1,4 @@
-package demo.luojun.com.demo.activity.testactivity;
+package demo.luojun.com.demo.activity.java;
 
 import android.os.Bundle;
 

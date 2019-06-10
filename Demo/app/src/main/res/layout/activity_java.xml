@@ -4,34 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="demo.luojun.com.demo.activity.java.classActivity">
+    tools:context="demo.luojun.com.demo.activity.java.JavaActivity">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/filed_bt"
+        android:id="@+id/build_bt"
+
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:text="属性filed"/>
+        android:text="建造者设计模式：build"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/constructor_bt"
+        android:id="@+id/proxy_bt"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:text="构造器constructor"/>
+        android:text="代理设计模式 proxy"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mothed_type_bt"
+        android:id="@+id/file_io_bt"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:text="方法属性mothedType"/>
+        android:text="文件流-file_io"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/invoke_bt"
+        android:id="@+id/class_bt"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:text="方法使用invoke"/>
+        android:text="反射-class"/>
+
+
+
 </LinearLayout>

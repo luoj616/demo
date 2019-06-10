@@ -6,20 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="demo.luojun.com.demo.activity.testactivity.TestActivity">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/java_bt"
+    tools:context="demo.luojun.com.demo.activity.android.AndroidActivity">
 
-        android:layout_marginTop="20dp"
-        android:text="java"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/android_bt"
+        android:id="@+id/handler_bt"
         android:layout_marginTop="20dp"
-        android:text="android"/>
+        android:text=" handler"/>
+
 
 
 </LinearLayout>

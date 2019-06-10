@@ -68,13 +68,16 @@
         <activity android:name=".activity.fragmentactivity.FragmentActivity" />
         <activity android:name=".activity.fragmentactivity.ViewPagerActivity" />
         <activity android:name=".activity.networkactivity.OkHttpUtilsActivity" />
-        <activity android:name=".activity.testactivity.BuildActivity" />
+        <activity android:name=".activity.java.BuildActivity" />
         <activity android:name=".activity.testactivity.TestActivity" />
-        <activity android:name=".activity.testactivity.HandlerActivity" />
-        <activity android:name=".activity.testactivity.FileIoActivity" />
+        <activity android:name=".activity.android.HandlerActivity" />
+        <activity android:name=".activity.java.FileIoActivity" />
         <activity android:name=".activity.networkactivity.SocketActivity" />
         <activity android:name=".activity.rxactivity.ObservableActivity" />
-        <activity android:name=".activity.testactivity.classActivity"></activity>
+        <activity android:name=".activity.java.classActivity" />
+        <activity android:name=".activity.java.JavaActivity" />
+        <activity android:name=".activity.java.ProxyActivity" />
+        <activity android:name=".activity.android.AndroidActivity"></activity>
     </application>
 
 </manifest>

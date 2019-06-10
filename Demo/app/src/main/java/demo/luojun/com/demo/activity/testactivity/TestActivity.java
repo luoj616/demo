@@ -5,6 +5,12 @@ import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
+import demo.luojun.com.demo.activity.android.AndroidActivity;
+import demo.luojun.com.demo.activity.android.HandlerActivity;
+import demo.luojun.com.demo.activity.java.BuildActivity;
+import demo.luojun.com.demo.activity.java.FileIoActivity;
+import demo.luojun.com.demo.activity.java.JavaActivity;
+import demo.luojun.com.demo.activity.java.classActivity;
 import demo.luojun.com.demo.context.BaseActivity;
 
 public class TestActivity extends BaseActivity {
@@ -16,29 +22,23 @@ public class TestActivity extends BaseActivity {
         ButterKnife.bind(this);
 
     }
-    @OnClick(R.id.build_bt)
+    @OnClick(R.id.java_bt)
     public void buildBt(){
-        basePresenter.jumpActivity(BuildActivity.class);
+        basePresenter.jumpActivity(JavaActivity.class);
     }
 
-    @OnClick(R.id.handler_bt)
-    public void handlerBt(){
-        basePresenter.jumpActivity(HandlerActivity.class);
-    }
 
-    @OnClick(R.id.file_io_bt)
+
+    @OnClick(R.id.android_bt)
     public void fileioOnBt(){
-        basePresenter.jumpActivity(FileIoActivity.class);
+        basePresenter.jumpActivity(AndroidActivity.class);
     }
 
 
 
 
 
-    @OnClick(R.id.class_bt)
-    public void fieldBt(){
-        basePresenter.jumpActivity(classActivity.class);
-    }
+
 
 
 
