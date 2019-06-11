@@ -5,7 +5,7 @@ import demo.luojun.com.demo.interfaces.Star;
 import demo.luojun.com.demo.utils.LogPrint;
 
 /**  代理模式：静态代理
- *   经纪人
+ *   代理对象：经纪人
  * Created by Administrator on 2019/6/10/010.
  */
 

@@ -14,4 +14,18 @@
         android:layout_marginTop="20dp"
         android:text="静态代理"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dynamics_proxy_bt"
+        android:layout_marginTop="20dp"
+        android:text="动态代理"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cglib_proxy_bt"
+        android:layout_marginTop="20dp"
+        android:text="非接口动态代理"/>
+
 </LinearLayout>

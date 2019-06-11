@@ -1,12 +1,10 @@
 package demo.luojun.com.demo.activity.java;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
-import demo.luojun.com.demo.activity.android.HandlerActivity;
 import demo.luojun.com.demo.context.BaseActivity;
 
 public class JavaActivity extends BaseActivity {
