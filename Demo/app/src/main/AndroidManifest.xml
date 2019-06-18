@@ -77,7 +77,8 @@
         <activity android:name=".activity.java.classActivity" />
         <activity android:name=".activity.java.JavaActivity" />
         <activity android:name=".activity.java.ProxyActivity" />
-        <activity android:name=".activity.android.AndroidActivity"></activity>
+        <activity android:name=".activity.android.AndroidActivity" />
+        <activity android:name=".activity.java.AnnotationActivity"></activity>
     </application>
 
 </manifest>

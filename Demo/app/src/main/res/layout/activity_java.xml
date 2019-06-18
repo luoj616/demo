@@ -34,6 +34,11 @@
         android:layout_marginTop="20dp"
         android:text="反射-class"/>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/annotation_bt"
+        android:layout_marginTop="20dp"
+        android:text="注解-annotataion"/>
 
 </LinearLayout>

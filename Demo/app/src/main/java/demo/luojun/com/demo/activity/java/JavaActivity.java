@@ -36,7 +36,17 @@ public class JavaActivity extends BaseActivity {
 
 
     @OnClick(R.id.class_bt)
-    public void fieldBt(){
+    public void classBt(){
         basePresenter.jumpActivity(classActivity.class);
     }
+
+
+    @OnClick(R.id.annotation_bt)
+    public void annotationBt(){
+        basePresenter.jumpActivity(AnnotationActivity.class);
+    }
+
+
+
+
 }
