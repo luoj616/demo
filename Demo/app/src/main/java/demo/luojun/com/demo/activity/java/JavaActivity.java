@@ -46,7 +46,10 @@ public class JavaActivity extends BaseActivity {
         basePresenter.jumpActivity(AnnotationActivity.class);
     }
 
-
+    @OnClick(R.id.javapoet_bt)
+    public void javapoetBt(){
+        basePresenter.jumpActivity(JavapoetActivity.class);
+    }
 
 
 }

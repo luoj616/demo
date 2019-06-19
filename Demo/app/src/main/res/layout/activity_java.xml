@@ -41,4 +41,11 @@
         android:layout_marginTop="20dp"
         android:text="注解-annotataion"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/javapoet_bt"
+        android:layout_marginTop="20dp"
+        android:text="代码生成jar-javapoet"/>
+
 </LinearLayout>

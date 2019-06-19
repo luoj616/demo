@@ -78,7 +78,8 @@
         <activity android:name=".activity.java.JavaActivity" />
         <activity android:name=".activity.java.ProxyActivity" />
         <activity android:name=".activity.android.AndroidActivity" />
-        <activity android:name=".activity.java.AnnotationActivity"></activity>
+        <activity android:name=".activity.java.AnnotationActivity" />
+        <activity android:name=".activity.java.JavapoetActivity"></activity>
     </application>
 
 </manifest>
