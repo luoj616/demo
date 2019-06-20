@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
  * 注解Integer类型的字段
  * Created by luo.j on 2019/6/18.
  */
+
+
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SQLInteger {

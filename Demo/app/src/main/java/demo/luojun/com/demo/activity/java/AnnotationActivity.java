@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.activity.model.SonAnnotation;
@@ -21,12 +22,16 @@ import demo.luojun.com.demo.interfaces.annotation.SQLString;
 /**
  * java注解  Annotation
  */
+
 public class AnnotationActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_annotation);
+        ButterKnife.bind(this);
+
+
     }
     @OnClick(R.id.get_annotation_bt)
     public void getAnnotationOnClick(){

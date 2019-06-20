@@ -10,7 +10,29 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        //这句很关键
+  /*      jackOptions {
+            enabled true
+        }*/
+//        dexOptions {
+//            preDexLibraries false
+//            jumboMode true
+//            javaMaxHeapSize "2g"
+//            incremental false
+//        }
+
+
     }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_7
+//        targetCompatibility JavaVersion.VERSION_1_7
+//    }
+
+//    compileOptions {
+//        targetCompatibility 1.8
+//        sourceCompatibility 1.8
+//    }
     buildTypes {
         release {
             minifyEnabled false
@@ -24,10 +46,11 @@ dependencies {
 
 
 
-
+//动态代理 非接口cglib
     compile files('libs/cglib-3.2.6.jar')
-
-
+//JAVA POET
+  // compile 'com.squareup:javapoet:1.9.0'
+//    compile files ('E:/sort/java8/jdk1.8.0_101/jre/lib/rt.jar')
 
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
@@ -41,4 +64,8 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+
+   // implementation project(':javatest')
+    compile project(path: ':javatest')
 }

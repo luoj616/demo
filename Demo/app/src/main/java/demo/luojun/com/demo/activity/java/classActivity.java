@@ -33,6 +33,7 @@ public class classActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class);
         ButterKnife.bind(this);
+
     }
 
     /**
@@ -46,6 +47,7 @@ public class classActivity extends BaseActivity {
             err( "-----------属性名和类型------------"  );
             student.a=1000;
             Field field = cls.getField("a");
+
             err(  "------访问属性非私有属性 可以是父类的：--------");
              err("名+类型+泛型类型："+field.getName() +" "+ field.getType().getName() + "---" + field.getGenericType());
             Field f = cls.getDeclaredField("list");
