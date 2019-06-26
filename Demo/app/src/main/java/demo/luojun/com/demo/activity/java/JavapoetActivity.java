@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.lj.test.MainTest;
 
-import butterknife.ButterKnife;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.context.BaseActivity;
 
@@ -13,11 +12,13 @@ import demo.luojun.com.demo.context.BaseActivity;
  */
 public class JavapoetActivity extends BaseActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_javapoet);
-        ButterKnife.bind(this);
+       // ButterKnife.bind(this);
+
        // helloword();
     }
 

@@ -52,4 +52,9 @@ public class JavaActivity extends BaseActivity {
     }
 
 
+    @OnClick(R.id.generics_bt)
+    public void genericsBt(){
+        basePresenter.jumpActivity(GenericsActivity.class);
+    }
+
 }
