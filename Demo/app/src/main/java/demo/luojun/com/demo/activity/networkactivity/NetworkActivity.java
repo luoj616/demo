@@ -15,12 +15,19 @@ public class NetworkActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_network);
         ButterKnife.bind(this);
+
     }
     @OnClick(R.id.okhttp_bt)
     public void networkBt(){
         startActivity(new Intent(this, OkhttpActivity.class));
     }
 
+
+    @OnClick(R.id.retrofit_bt)
+    public void retrofitOnClick(){
+
+        startActivity(new Intent(this, retrofitActivity.class));
+    }
 
     @OnClick(R.id.okhttputils_bt)
     public void okHttpUtilsOnClick(){
