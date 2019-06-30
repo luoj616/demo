@@ -22,7 +22,7 @@ public class MainTest {
 
     public static void helloword(){
 
-        MethodSpec main = MethodSpec.methodBuilder("show")
+        /*MethodSpec main = MethodSpec.methodBuilder("show")
                 .addModifiers(Modifier.PUBLIC,Modifier.STATIC)
                 .addStatement("$T.out.println($S)",System.class,"Hello World!")
                 .build();
@@ -40,7 +40,7 @@ public class MainTest {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
     }
 
     public static void get(){

@@ -263,7 +263,7 @@ public  void requestPostSyncJson(String url,Map<String,String> parms,final int r
      */
     protected void requestGetSync( final int requestCode,Request request) {
         //test
-       final OkHttpClient httpClient = new OkHttpClient();
+        final OkHttpClient httpClient = new OkHttpClient();
         final Call call = httpClient.newCall(request);
 
         new Thread(new Runnable() {
