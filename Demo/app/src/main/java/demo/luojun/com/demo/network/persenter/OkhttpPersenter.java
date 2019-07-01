@@ -13,7 +13,7 @@ import demo.luojun.com.demo.network.view.OkhttpView;
  */
 public class OkhttpPersenter extends BaseOkHttpPersenter<OkhttpView> {
     public void okhttpGet() {
-        requestGetSync(AppServerAPI.OKHTTP_GET,1);
+        requestGetInitialSync(AppServerAPI.OKHTTP_GET,1);
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(new Runnable() {
             @Override

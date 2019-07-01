@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.security.PublicKey;
 import java.util.Map;
 
+import demo.luojun.com.demo.context.AppServerAPI;
 import demo.luojun.com.demo.utils.RSAEncryptionUtil;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -23,9 +24,19 @@ import okhttp3.Response;
  */
 public class BaseOkHttpPersenter<V> extends BasePresenter {
 
-    public Request getRequestYG(String url) {
+
+    public Request getRequestInitial(String url) {
         Request request = new Request.Builder()
                 .url(url)
+
+                .headers(initHead())
+                .build();
+        return request;
+
+    }
+    public Request getRequestYG(String url) {
+        Request request = new Request.Builder()
+                .url(AppServerAPI.YG_IP+url)
      /*           .addHeader("User-Agent", getUserAgent())
                 .addHeader("Udid", "dc:09:4c:d6:f9:63")//Udid=dc:09:4c:d6:f9:63
                 .addHeader("Ver", "1.0")//Ver=1.0
@@ -129,7 +140,7 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
      */
     public Request getRequestYGPostForm(String url,Map<String,String> parms){
     Request request= new Request.Builder()
-            .url(url)
+            .url(AppServerAPI.YG_IP+url)
             .method("POST",getFormBody(parms))
           //  .post(getFormBody(parms))
             .headers(initHead())
@@ -243,7 +254,12 @@ public  void requestPostSyncJson(String url,Map<String,String> parms,final int r
 
 
 
-
+    protected void requestGetInitialSync(String url, final int requestCode){
+        printLog(url);
+        printLog("-@@@@@@--"+getRequestYG(url).url().port()+"----------------"+getOkhttpClient().proxy());
+        printLog(getRequestYG(url).url().host()+"----------------"+getRequestYG(url).url().username());
+        requestGetSync(requestCode,getRequestInitial(url));
+    }
     protected void requestGetSync(String url, final int requestCode){
         printLog(url);
         printLog("-@@@@@@--"+getRequestYG(url).url().port()+"----------------"+getOkhttpClient().proxy());
