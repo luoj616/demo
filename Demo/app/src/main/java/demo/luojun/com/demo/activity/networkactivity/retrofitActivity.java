@@ -23,6 +23,92 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+
+public  void requestPostSyncForm(String url,Map<String,String> parms,final int requestCode){
+        OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
+        okHttpRequestUtils.postFromSync(AppServerAPI.YG_IP + url, parms, new OkHttpResponse() {
+@Override
+public void getSuccess(final String result) {
+        getThisActivity().runOnUiThread(new Runnable() {
+@Override
+public void run() {
+        reponse(result, requestCode);
+        }
+        });
+        }
+
+@Override
+public void getFail(String mes) {
+
+        }
+        });
+        }
+
+
+
+
+
+
+
+
+
+
+protected void requestGetInitialSync(String url, final int requestCode){
+
+        OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
+        okHttpRequestUtils.getSync(url, new OkHttpResponse() {
+@Override
+public void getSuccess(final String result) {
+        getThisActivity().runOnUiThread(new Runnable() {
+@Override
+public void run() {
+        reponse(result, requestCode);
+        }
+        });
+        }
+
+@Override
+public void getFail(String mes) {
+
+        }
+        });
+
+        }
+protected void requestGetSync(String url, final int requestCode){
+        OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
+        okHttpRequestUtils.getSync(AppServerAPI.YG_IP+url, new OkHttpResponse() {
+@Override
+public void getSuccess(final String result) {
+        getThisActivity().runOnUiThread(new Runnable() {
+@Override
+public void run() {
+        reponse(result, requestCode);
+        }
+        });
+        }
+
+@Override
+public void getFail(String mes) {
+
+        }
+        });
+        }
+
+
+
+
+/**
+ * 返回数据
+ * @param result
+ * @param requestCode
+ */
+protected void reponse(String result, int requestCode) {
+        }
+
+@Override
+protected void sendRequest(String url, Map map, int sendCode) {
+
+        }
 public class retrofitActivity extends BaseActivity {
 
     @Override

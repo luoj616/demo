@@ -1,24 +1,9 @@
 package com.lj.test;
 
-import com.squareup.javapoet.JavaFile;
-import com.squareup.javapoet.MethodSpec;
-import com.squareup.javapoet.TypeSpec;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-import javax.lang.model.element.Modifier;
-
-
 public class MainTest {
 
 
-    public static void main(String[] args) {
-      //  helloword();
-        get();
-    }
+
 
     public static void helloword(){
 
@@ -44,7 +29,7 @@ public class MainTest {
     }
 
     public static void get(){
-        try {
+       /* try {
             Class hello = Class.forName("com.lj.test.HelloWorld");
             hello.newInstance();
             Method method = hello.getMethod("show", null);
@@ -69,6 +54,6 @@ public class MainTest {
         } catch (InvocationTargetException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
     }
 }

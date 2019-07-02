@@ -2,8 +2,6 @@ package demo.luojun.com.demo.network.persenter;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import demo.luojun.com.demo.context.AppServerAPI;
 import demo.luojun.com.demo.network.view.OkhttpView;
@@ -14,13 +12,7 @@ import demo.luojun.com.demo.network.view.OkhttpView;
 public class OkhttpPersenter extends BaseOkHttpPersenter<OkhttpView> {
     public void okhttpGet() {
         requestGetInitialSync(AppServerAPI.OKHTTP_GET,1);
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
 
-            }
-        });
     }
 
     public void okhttpYG() {
