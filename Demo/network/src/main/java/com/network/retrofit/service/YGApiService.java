@@ -1,6 +1,7 @@
-package demo.luojun.com.demo.interfaces.retrofit;
+package com.network.retrofit.service;
 
-import demo.luojun.com.demo.context.AppServerAPI;
+import com.network.AppServerAPI;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

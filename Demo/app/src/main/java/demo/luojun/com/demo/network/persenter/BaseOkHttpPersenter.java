@@ -98,5 +98,6 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
 
     @Override
     protected void sendRequest(String url, Map map, int sendCode) {
-      //
-        // ==+++++++++++++++++++++++++++++++++++++++++++++++++
+        //
+        // ==++++++++++++++++++++++++++++++++++++++++++++++++
+    }}
