@@ -1,4 +1,6 @@
-package com.network;
+package com.network.rxretrofit.service;
+
+import com.network.AppServerAPI;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

@@ -81,7 +81,8 @@
         <activity android:name=".activity.java.AnnotationActivity" />
         <activity android:name=".activity.java.JavapoetActivity" />
         <activity android:name=".activity.networkactivity.retrofitActivity" />
-        <activity android:name=".activity.java.GenericsActivity"></activity>
+        <activity android:name=".activity.java.GenericsActivity" />
+        <activity android:name=".activity.networkactivity.RxRetrofitActivity"></activity>
     </application>
 
 </manifest>

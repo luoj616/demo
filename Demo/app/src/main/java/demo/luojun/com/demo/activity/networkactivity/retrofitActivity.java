@@ -2,29 +2,14 @@ package demo.luojun.com.demo.activity.networkactivity;
 
 import android.os.Bundle;
 
-import java.io.IOException;
+import com.network.RetrofitResponse;
+import com.network.retrofit.RetrofitRequest;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
-import demo.luojun.com.demo.context.AppServerAPI;
 import demo.luojun.com.demo.context.BaseActivity;
 
-import com.network.RetrofitResponse;
-import com.network.retrofit.RetrofitRequest;
-import com.network.retrofit.service.YGApiService;
-import demo.luojun.com.demo.utils.RSAEncryptionUtil;
-import okhttp3.FormBody;
-import okhttp3.Headers;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class retrofitActivity extends BaseActivity {
 
@@ -33,10 +18,23 @@ public class retrofitActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
         ButterKnife.bind(this);
-
+//        Retrofit retrofit = new Retrofit.Builder().build();
+//        YGApiService ygApiService =retrofit.create(YGApiService.class);
+//        observe(ygApiService.getVersion()).map(new Func1<String , String>() {
+//            @Override
+//            public String call(String s) {
+//                //可以处理对应的逻辑后在返回
+//                return s;
+//            }
+//        });
 
     }
-
+    /*protected  <T> Observable<T> observe(Observable<T> observable){
+        return observable
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }*/
     /*
      get 同步
      */

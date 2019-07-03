@@ -8,8 +8,6 @@ import java.io.IOException;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * Created by Administrator on 2019/7/2/002.
@@ -20,8 +18,8 @@ public class RetrofitRequest {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                  RetrofitUtils retrofitUtils = new RetrofitUtils();
-                YGApiService ygApiService = retrofitUtils.getRetrofitUtils().create(YGApiService.class);
+
+                YGApiService ygApiService =  RetrofitServiceManager.getInstance().create(YGApiService.class);
 
                 try {
                     Response<String> str=ygApiService.getVersion().execute();
@@ -36,8 +34,8 @@ public class RetrofitRequest {
     }
 
     public void getDetail(String detail,final RetrofitResponse retrofitResponse){
-        RetrofitUtils retrofitUtils = new RetrofitUtils();
-        YGApiService ygApiService = retrofitUtils.getRetrofitUtils().create(YGApiService.class);
+
+        YGApiService ygApiService = RetrofitServiceManager.getInstance().create(YGApiService.class);
         ygApiService.getDetail(detail).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

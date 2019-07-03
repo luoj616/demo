@@ -19,12 +19,19 @@
         android:text="OKHTTP" />
 
     <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:id="@+id/retrofit_bt"
+    android:layout_gravity="center_horizontal"
+    android:text="retrofit" />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:id="@+id/retrofit_bt"
+        android:id="@+id/rxretrofit_bt"
         android:layout_gravity="center_horizontal"
-        android:text="retrofit" />
+        android:text="rxretrofit" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

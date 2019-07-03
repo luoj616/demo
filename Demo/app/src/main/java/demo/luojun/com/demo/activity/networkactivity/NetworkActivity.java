@@ -28,7 +28,11 @@ public class NetworkActivity extends BaseActivity {
 
         startActivity(new Intent(this, retrofitActivity.class));
     }
+    @OnClick(R.id.rxretrofit_bt)
+    public void rxretrofitOnClick(){
 
+        startActivity(new Intent(this, RxRetrofitActivity.class));
+    }
     @OnClick(R.id.okhttputils_bt)
     public void okHttpUtilsOnClick(){
 
