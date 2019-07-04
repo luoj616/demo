@@ -1,5 +1,6 @@
 package com.network.retrofit;
 
+import com.network.BaseBean;
 import com.network.RetrofitResponse;
 import com.network.retrofit.service.YGApiService;
 
@@ -22,7 +23,7 @@ public class RetrofitRequest {
                 YGApiService ygApiService =  RetrofitServiceManager.getInstance().create(YGApiService.class);
 
                 try {
-                    Response<String> str=ygApiService.getVersion().execute();
+                    Response<BaseBean> str=ygApiService.getVersion().execute();
                     String result = str.body().toString();
                     System.out.print("同步---"+result);
                     retrofitResponse.getSuccess(result);
@@ -36,16 +37,16 @@ public class RetrofitRequest {
     public void getDetail(String detail,final RetrofitResponse retrofitResponse){
 
         YGApiService ygApiService = RetrofitServiceManager.getInstance().create(YGApiService.class);
-        ygApiService.getDetail(detail).enqueue(new Callback<String>() {
+        ygApiService.getDetail(detail).enqueue(new Callback<BaseBean>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<BaseBean> call, Response<BaseBean> response) {
                 String baseData = response.body().toString();
                 System.out.print("post 异步+=="+baseData+"---");
                 retrofitResponse.getSuccess(baseData);
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<BaseBean> call, Throwable t) {
 
             }
         });

@@ -35,7 +35,7 @@ public class InterceptorLog implements Interceptor {
             System.out.print(String.format("发送请求 %s on %s%n%s",
                     request.url(), chain.connection(), request.headers()));
         }
-        okhttp3.Response response = chain.proceed(request);
+        Response response = chain.proceed(request);
         long t2 = System.nanoTime();//收到响应的时间
         //这里不能直接使用response.body().string()的方式输出日志
         //因为response.body().string()之后，response中的流会被关闭，程序会报错，我们需要创建出一

@@ -1,5 +1,6 @@
 package com.network.rxretrofit;
 
+import com.google.gson.Gson;
 import com.network.AppServerAPI;
 import com.network.okhttp.InterceptorLog;
 import com.network.retrofit.InterceptorHeader;
@@ -9,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by luo.j on 2019/7/3.
@@ -20,9 +21,9 @@ public class RxRetrofitServiceManager {
     private static final int DEFAULT_TIME_OUT = 5;//超时时间 5s
     private static final int DEFAULT_READ_TIME_OUT = 10;
     private Retrofit mRetrofit;
-    private RxRetrofitServiceManager(){
+   private RxRetrofitServiceManager(){
         mRetrofit = new Retrofit.Builder()
-                .addConverterFactory(ScalarsConverterFactory.create())
+                         .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(AppServerAPI.YG_IP)
                 .client(genericClient())
@@ -31,7 +32,8 @@ public class RxRetrofitServiceManager {
 
     public  Retrofit getRetrofitUtils(){
         return new Retrofit.Builder()
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(AppServerAPI.YG_IP)
                 .client(genericClient())
                 .build();

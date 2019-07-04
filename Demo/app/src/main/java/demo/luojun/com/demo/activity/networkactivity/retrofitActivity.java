@@ -34,8 +34,8 @@ public class retrofitActivity extends BaseActivity {
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
-    }*/
-    /*
+ /*
+    *//*
      get 同步
      */
     @OnClick(R.id.retrofit_sync_bt)

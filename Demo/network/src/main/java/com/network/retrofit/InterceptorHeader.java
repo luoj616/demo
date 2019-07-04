@@ -24,7 +24,7 @@ public class InterceptorHeader implements Interceptor {
                                               .addHeader("Cookie", "add cookies here")*/
 
                 .build();
-        okhttp3.Response response = chain.proceed(requestLog);
+        Response response = chain.proceed(requestLog);
         return response;
     }
 }

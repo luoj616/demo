@@ -1,6 +1,7 @@
 package com.network.retrofit.service;
 
 import com.network.AppServerAPI;
+import com.network.BaseBean;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -14,9 +15,9 @@ import retrofit2.http.POST;
 
 public interface YGApiService {
    @GET(AppServerAPI.YG_VERSION)
-   Call<String> getVersion();
+   Call<BaseBean> getVersion();
 
  @POST(AppServerAPI.YG_commodityDetail)
  @FormUrlEncoded
-   Call<String> getDetail(@Field("productid") String productid);
+   Call<BaseBean> getDetail(@Field("productid") String productid);
 }

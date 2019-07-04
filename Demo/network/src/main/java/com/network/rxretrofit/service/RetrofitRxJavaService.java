@@ -1,6 +1,7 @@
 package com.network.rxretrofit.service;
 
 import com.network.AppServerAPI;
+import com.network.MyClass;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -14,11 +15,11 @@ import rx.Observable;
 
 public interface RetrofitRxJavaService {
 
-    @GET(AppServerAPI.YG_VERSION)
-    Observable<String> getVersion();
+  @GET(AppServerAPI.YG_VERSION)
+  Observable<MyClass> getVersion();
 
     @POST(AppServerAPI.YG_commodityDetail)
     @FormUrlEncoded
-    Observable<String> getDetail(@Field("productid") String productid);
+    Observable<MyClass> getDetail(@Field("productid") String productid);
 
 }

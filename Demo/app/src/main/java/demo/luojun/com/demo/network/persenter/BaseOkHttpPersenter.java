@@ -1,11 +1,10 @@
 package demo.luojun.com.demo.network.persenter;
 
+import com.network.AppServerAPI;
 import com.network.OkHttpResponse;
 import com.network.okhttp.OkHttpRequestUtils;
 
 import java.util.Map;
-
-import demo.luojun.com.demo.context.AppServerAPI;
 
 
 /**
@@ -15,7 +14,7 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
 
 
     public  void requestPostSyncForm(String url,Map<String,String> parms,final int requestCode){
-        OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
+      OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
         okHttpRequestUtils.postFromSync(AppServerAPI.YG_IP + url, parms, new OkHttpResponse() {
             @Override
             public void getSuccess(final String result) {
@@ -45,7 +44,7 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
 
     protected void requestGetInitialSync(String url, final int requestCode){
 
-        OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
+    OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
         okHttpRequestUtils.getSync(url, new OkHttpResponse() {
             @Override
             public void getSuccess(final String result) {
@@ -65,7 +64,7 @@ public class BaseOkHttpPersenter<V> extends BasePresenter {
 
     }
     protected void requestGetSync(String url, final int requestCode){
-        OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
+       OkHttpRequestUtils okHttpRequestUtils = new OkHttpRequestUtils();
         okHttpRequestUtils.getSync(AppServerAPI.YG_IP+url, new OkHttpResponse() {
             @Override
             public void getSuccess(final String result) {

@@ -1,5 +1,6 @@
 package com.network.rxretrofit;
 
+import com.network.MyClass;
 import com.network.rxretrofit.service.RetrofitRxJavaService;
 
 import rx.Observable;
@@ -9,15 +10,15 @@ import rx.Observable;
  */
 
 public class YgServiceLoader extends ObjectLoader {
-    private RetrofitRxJavaService ygApiService;
+   private RetrofitRxJavaService ygApiService;
     public YgServiceLoader(){
         ygApiService = RxRetrofitServiceManager.getInstance().create(RetrofitRxJavaService.class);
     }
-    public Observable<String> getVersion(){
+    public Observable<MyClass> getVersion(){
         return observe(ygApiService.getVersion());
 
     }
-    public Observable<String> getDetail(String productId){
+    public Observable<MyClass> getDetail(String productId){
         return observe(ygApiService.getDetail(productId));
     }
 

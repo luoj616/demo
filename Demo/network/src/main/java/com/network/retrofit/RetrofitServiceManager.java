@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Administrator on 2019/7/2/002.
@@ -19,19 +19,13 @@ public class RetrofitServiceManager {
     private Retrofit mRetrofit;
     private RetrofitServiceManager(){
         mRetrofit = new Retrofit.Builder()
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(AppServerAPI.YG_IP)
                 .client(genericClient())
                 .build();
     }
 
-    public  Retrofit getRetrofitUtils(){
-        return new Retrofit.Builder()
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .baseUrl(AppServerAPI.YG_IP)
-                .client(genericClient())
-                .build();
-    }
+
 
 
     public OkHttpClient genericClient() {
