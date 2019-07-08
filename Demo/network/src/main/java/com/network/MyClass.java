@@ -1,6 +1,6 @@
 package com.network;
 
-public class MyClass {
+public class MyClass extends BaseBean {
     private int age;
 
     public int getAge() {
@@ -9,5 +9,15 @@ public class MyClass {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "MyClass{" +
+                "age=" + age +
+                '}'+"BaseBean{" +
+                "code='" + code + '\'' +
+                ", response='" + response + '\'' +
+                '}';
     }
 }

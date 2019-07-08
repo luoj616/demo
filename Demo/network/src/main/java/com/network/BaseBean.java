@@ -5,8 +5,8 @@ package com.network;
  */
 
 public class BaseBean {
-  private   String code;
-    private String response;
+  protected     String code;
+   protected String response;
 
     public String getCode() {
         return code;

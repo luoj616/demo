@@ -13,7 +13,7 @@ import rx.Observable;
  * Created by luo.j on 2019/7/3.
  */
 
-public interface RetrofitRxJavaService {
+public interface YGRetrofitRxJavaService {
 
   @GET(AppServerAPI.YG_VERSION)
   Observable<MyClass> getVersion();

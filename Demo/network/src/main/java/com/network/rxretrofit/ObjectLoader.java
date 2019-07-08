@@ -9,7 +9,8 @@ import rx.schedulers.Schedulers;
  * Created by luo.j on 2019/7/3.
  */
 
-public class ObjectLoader {
+public class ObjectLoader<T> implements CreateServiceLoader<T> {
+
 
 
     /*
@@ -22,5 +23,10 @@ public class ObjectLoader {
          .subscribeOn(Schedulers.io())
             //  .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public T getService(Class<T> t) {
+        return RxRetrofitServiceManager.getInstance().create(t);
     }
 }

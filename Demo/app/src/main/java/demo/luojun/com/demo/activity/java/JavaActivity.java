@@ -57,4 +57,9 @@ public class JavaActivity extends BaseActivity {
         basePresenter.jumpActivity(GenericsActivity.class);
     }
 
+    @OnClick(R.id.simple_factory_bt)
+    public void simpleFactoryBt(){
+        basePresenter.jumpActivity(FactoryActivity.class);
+    }
+
 }

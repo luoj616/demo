@@ -1,6 +1,5 @@
 package com.network.rxretrofit;
 
-import com.google.gson.Gson;
 import com.network.AppServerAPI;
 import com.network.okhttp.InterceptorLog;
 import com.network.retrofit.InterceptorHeader;
@@ -18,26 +17,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RxRetrofitServiceManager {
 
+
     private static final int DEFAULT_TIME_OUT = 5;//超时时间 5s
     private static final int DEFAULT_READ_TIME_OUT = 10;
     private Retrofit mRetrofit;
-   private RxRetrofitServiceManager(){
+    private RxRetrofitServiceManager(){
         mRetrofit = new Retrofit.Builder()
-                         .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(AppServerAPI.YG_IP)
                 .client(genericClient())
                 .build();
     }
 
-    public  Retrofit getRetrofitUtils(){
-        return new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(AppServerAPI.YG_IP)
-                .client(genericClient())
-                .build();
-    }
+
 
 
     public OkHttpClient genericClient() {
@@ -50,6 +43,7 @@ public class RxRetrofitServiceManager {
                 .build();
         return httpClient;
     }
+
 
     private static class SingletonHolder{
         private static final RxRetrofitServiceManager INSTANCE = new RxRetrofitServiceManager();

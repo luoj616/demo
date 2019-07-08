@@ -49,16 +49,16 @@ dependencies {
     // compile 'com.squareup:javapoet:1.9.0'
     //    compile files ('E:/sort/java8/jdk1.8.0_101/jre/lib/rt.jar')
     // implementation project(':javatest')
-  //  compile project(path: ':javatest')
+    //  compile project(path: ':javatest')
     //   Error:Could not find method implementation() for arguments [project ':butterknife'] on object of type org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler.
 //    compile 'io.reactivex:rxjava:1.0.14'
 //   compile 'io.reactivex:rxandroid:1.0.1'
 //  compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
-  // compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
-  //   compile 'com.squareup.retrofit2:retrofit:2.3.0'
-  //  compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
-     //  compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
-        //如果需要使用更多扩展功能，比如gson转换，rxjava适配等，可以视自己需要继续添加引用
+    // compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    //   compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    //  compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    //  compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    //如果需要使用更多扩展功能，比如gson转换，rxjava适配等，可以视自己需要继续添加引用
 //            compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
 //           compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 //
@@ -66,6 +66,9 @@ dependencies {
 //        compile 'com.squareup.okio:okio:1.11.0'
 
 
+    compile project(':javatest')
+    //  compile project(':network')
+    compile project(':network')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.jakewharton:butterknife:8.5.1'
@@ -74,9 +77,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    compile project(':javatest')
-    //  compile project(':network')
-  compile project(':network')
 }
 /*
 allprojects {
