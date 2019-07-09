@@ -83,7 +83,8 @@
         <activity android:name=".activity.networkactivity.retrofitActivity" />
         <activity android:name=".activity.java.GenericsActivity" />
         <activity android:name=".activity.networkactivity.RxRetrofitActivity" />
-        <activity android:name=".activity.java.FactoryActivity"></activity>
+        <activity android:name=".activity.java.FactoryActivity" />
+        <activity android:name=".activity.java.SingletonActivity"></activity>
     </application>
 
 </manifest>
