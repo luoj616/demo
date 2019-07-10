@@ -7,19 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="demo.luojun.com.demo.activity.testactivity.TestActivity">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/java_bt"
 
-        android:layout_marginTop="20dp"
-        android:text="java"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/android_bt"
-        android:layout_marginTop="20dp"
-        android:text="android"/>
 
 
 </LinearLayout>

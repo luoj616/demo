@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="demo.luojun.com.demo.activity.viewactivity.TitleActivity">
+    tools:context=".activity.android.viewactivity.TitleActivity">
     <demo.luojun.com.demo.widget.custom.TitleView
         android:layout_width="match_parent"
         android:id="@+id/title_view"

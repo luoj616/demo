@@ -7,20 +7,13 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context="demo.luojun.com.demo.activity.java.JavaActivity">
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/build_bt"
-
+        android:id="@+id/design_bt"
         android:layout_marginTop="20dp"
-        android:text="建造者设计模式：build"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/proxy_bt"
-        android:layout_marginTop="20dp"
-        android:text="代理设计模式 proxy"/>
-
+        android:text="设计模式——design"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,8 +50,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/simple_factory_bt"
         android:layout_marginTop="20dp"
-        android:text="简单工厂-simpleFactory"/>
+        android:id="@+id/rxjava_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="rxjava" />
 
 </LinearLayout>

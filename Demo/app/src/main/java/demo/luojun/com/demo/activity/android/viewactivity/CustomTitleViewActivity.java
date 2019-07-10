@@ -1,6 +1,5 @@
-package demo.luojun.com.demo.activity.viewactivity;
+package demo.luojun.com.demo.activity.android.viewactivity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import demo.luojun.com.demo.R;

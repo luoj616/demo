@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="demo.luojun.com.demo.activity.java.FactoryActivity">
+    tools:context="demo.luojun.com.demo.activity.java.design.FactoryActivity">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

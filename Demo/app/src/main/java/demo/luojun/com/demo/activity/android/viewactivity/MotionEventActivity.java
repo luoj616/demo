@@ -1,7 +1,6 @@
-package demo.luojun.com.demo.activity.viewactivity;
+package demo.luojun.com.demo.activity.android.viewactivity;
 
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;

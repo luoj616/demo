@@ -50,41 +50,42 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.viewactivity.WidgetActivity" />
-        <activity android:name=".activity.viewactivity.MotionEventActivity" />
+        <activity android:name=".activity.android.viewactivity.WidgetActivity" />
+        <activity android:name=".activity.android.viewactivity.MotionEventActivity" />
         <activity
-            android:name=".activity.viewactivity.SimpleLayoutActivity"
+            android:name=".activity.android.viewactivity.SimpleLayoutActivity"
             android:label="@string/title_activity_simple_layout"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.viewactivity.TitleActivity"
+            android:name=".activity.android.viewactivity.TitleActivity"
             android:label="@string/title_activity_simple_layout"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.viewactivity.MyListviewActivity" />
-        <activity android:name=".activity.viewactivity.CustomTitleViewActivity" />
-        <activity android:name=".activity.viewactivity.CustomViewActivity" />
-        <activity android:name=".activity.viewactivity.CircleTextViewActivity" />
-        <activity android:name=".activity.fragmentactivity.GuideActivity" />
-        <activity android:name=".activity.fragmentactivity.FragmentActivity" />
-        <activity android:name=".activity.fragmentactivity.ViewPagerActivity" />
+        <activity android:name=".activity.android.viewactivity.MyListviewActivity" />
+        <activity android:name=".activity.android.viewactivity.CustomTitleViewActivity" />
+        <activity android:name=".activity.android.viewactivity.CustomViewActivity" />
+        <activity android:name=".activity.android.viewactivity.CircleTextViewActivity" />
+        <activity android:name=".activity.android.fragmentactivity.GuideActivity" />
+        <activity android:name=".activity.android.fragmentactivity.FragmentActivity" />
+        <activity android:name=".activity.android.fragmentactivity.ViewPagerActivity" />
         <activity android:name=".activity.networkactivity.OkHttpUtilsActivity" />
-        <activity android:name=".activity.java.BuildActivity" />
+        <activity android:name=".activity.java.design.BuildActivity" />
         <activity android:name=".activity.testactivity.TestActivity" />
         <activity android:name=".activity.android.HandlerActivity" />
         <activity android:name=".activity.java.FileIoActivity" />
         <activity android:name=".activity.networkactivity.SocketActivity" />
-        <activity android:name=".activity.rxactivity.ObservableActivity" />
+        <activity android:name=".activity.java.rxactivity.ObservableActivity" />
         <activity android:name=".activity.java.classActivity" />
         <activity android:name=".activity.java.JavaActivity" />
-        <activity android:name=".activity.java.ProxyActivity" />
+        <activity android:name=".activity.java.design.ProxyActivity" />
         <activity android:name=".activity.android.AndroidActivity" />
         <activity android:name=".activity.java.AnnotationActivity" />
         <activity android:name=".activity.java.JavapoetActivity" />
         <activity android:name=".activity.networkactivity.retrofitActivity" />
         <activity android:name=".activity.java.GenericsActivity" />
         <activity android:name=".activity.networkactivity.RxRetrofitActivity" />
-        <activity android:name=".activity.java.FactoryActivity" />
-        <activity android:name=".activity.java.SingletonActivity"></activity>
+        <activity android:name=".activity.java.design.FactoryActivity" />
+        <activity android:name=".activity.java.design.SingletonActivity" />
+        <activity android:name=".activity.java.design.DesignActivity"></activity>
     </application>
 
 </manifest>

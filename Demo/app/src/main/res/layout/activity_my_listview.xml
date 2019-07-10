@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="demo.luojun.com.demo.activity.viewactivity.MyListviewActivity">
+    tools:context=".activity.android.viewactivity.MyListviewActivity">
     <demo.luojun.com.demo.widget.custom.MyListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

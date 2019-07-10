@@ -1,4 +1,4 @@
-package demo.luojun.com.demo.activity.fragmentactivity;
+package demo.luojun.com.demo.activity.android.fragmentactivity;
 
 import android.os.Bundle;
 

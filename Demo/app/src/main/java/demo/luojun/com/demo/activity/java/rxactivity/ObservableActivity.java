@@ -1,10 +1,11 @@
-package demo.luojun.com.demo.activity.rxactivity;
+package demo.luojun.com.demo.activity.java.rxactivity;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ImageView;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -14,14 +15,18 @@ import demo.luojun.com.demo.context.BaseActivity;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * rxjava
  */
 public class ObservableActivity extends BaseActivity{
+
+
     private    Observer<String> observer;//观察者
     private  Subscriber<String> subscriber;//观察者
    private  Observable<String> observable;//被观察者
@@ -79,18 +84,26 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
         });
 
     }
+    //观察者observer
     @OnClick(R.id.observer_bt)
     public void observerOnClick(){
         observerAndObservable();
     }
+
+    //观察者 subscriber
     @OnClick(R.id.subscriber_bt)
     public void subscriberOnClick(){
        subscriberAndObervale();
     }
+
+
+    //observable .just
     @OnClick(R.id.just_observable_bt)
     public void justObservableOnClick(){
         justObservable();
     }
+
+    //observable.from
     @OnClick(R.id.from_observable_bt)
     public void fromObservableOnClick(){
       formObservable();
@@ -103,6 +116,8 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
     public void onCompletedOnClick(){
        actiono();
     }
+
+    //Action1
     @OnClick(R.id.action1_bt)
     public void onNext0nErrorOnClick(){
         actrion1();
@@ -113,16 +128,59 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
         flatMapFunc();
     }
 
+    /**
+     * 观察者oberver
+     */
     public void observerAndObservable(){
         observable.subscribe(observer);
     }
+
+    /**
+     * 观察者  subscriber
+     */
     public void subscriberAndObervale(){
         observable.subscribe(subscriber);
+
+        Observable.create(new Observable.OnSubscribe<String>(){
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                subscriber.onNext("oohhgl");
+                subscriber.onNext("ooooo");
+                subscriber.onError( new Throwable());
+
+            }
+        }).subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                err("执行完成------");
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                err("onError------"+e.toString());
+            }
+
+            @Override
+            public void onNext(String s) {
+
+            }
+        });
     }
+
+    /**
+     * obervable just
+     */
     public void justObservable(){
         Observable observable= Observable.just("just","ahh","werwr");
         observable.subscribe(observer);
+
+
     }
+
+    /**
+     * obervable from
+     */
     public void formObservable(){
         String[] strings={"from","s","luojun","huangxia"};
         Observable observable = Observable.from(strings);
@@ -130,7 +188,11 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
         observable.subscribe(observer);
     }
 
+    /**
+     * action1
+     */
     public void actiono(){
+
         Action1<String> onNextAction = new Action1<String>() {
             // onNext()
             @Override
@@ -152,8 +214,15 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
                 err("completed");
             }
         };
+        // 自动创建 Subscriber ，并使用 onNextAction、 onErrorAction 和 onCompletedAction
+        // 来定义 onNext()、 onError() 和 onCompleted()
         observable.subscribe(onNextAction,onErrorAction,onCompletedAction);
     }
+
+
+    /**
+     * Acton1
+     */
     public void actrion1(){
         Action1<String> action1 = new Action1<String>() {
             @Override
@@ -167,8 +236,36 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
 
             }
         };
+        // 自动创建 Subscriber ，并使用 onNextAction 来定义 onNext()
         observable.subscribe(action1);
+        // 自动创建 Subscriber ，并使用 onNextAction 和 onErrorAction 来定义 onNext() 和 onError()
         observable.subscribe(action1,throwableAction1);
+    }
+
+    /**
+     * 县城调度
+     */
+    public void schecduler(){
+        final int imageRes;
+        final ImageView imageView = null;
+        Observable.create(new Observable.OnSubscribe<Drawable>(){
+            @Override
+            public void call(Subscriber<? super Drawable> subscriber) {
+                Drawable drawable =null;
+                subscriber.onNext(drawable);
+                subscriber.onCompleted();
+
+            }
+        }).observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<Drawable>() {
+                    @Override
+                    public void call(Drawable drawable) {
+                        if(imageView!=null&&drawable!=null)
+
+                        imageView.setImageDrawable(drawable);
+                    }
+                });
     }
 
     public void mapFuck(){
@@ -176,7 +273,8 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
                .map(new Func1<String, Bitmap>() {
                    @Override
                    public Bitmap call(String s) {
-                       return null;
+                       Bitmap bitmap = null;
+                       return bitmap;
                    }
                }).subscribe(new Action1<Bitmap>() {
            @Override
@@ -185,7 +283,23 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
            }
        });
     }
+    public void map(){
+        Student[] student = new Student[]{};
+        Observable.from(student)
+                .map(new Func1<Student, List<Student.Course>>() {
 
+                    @Override
+                    public List<Student.Course> call(Student student) {
+                        return student.getList();
+                    }
+                })
+                .subscribe(new Action1<List<Student.Course>>() {
+            @Override
+            public void call(List<Student.Course> courses) {
+
+            }
+        });
+    }
     public void flatMapFunc(){
         Student student =new Student(true);
         Subscriber<Student.Course> subscriber = new Subscriber<Student.Course>() {
@@ -216,11 +330,5 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
 
     }
 
-  public  class s implements InvocationHandler{
 
-      @Override
-      public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-          return null;
-      }
-  }
 }

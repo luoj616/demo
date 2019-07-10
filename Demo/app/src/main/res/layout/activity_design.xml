@@ -6,26 +6,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="demo.luojun.com.demo.activity.java.design.ProxyActivity">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/static_proxy_bt"
-        android:layout_marginTop="20dp"
-        android:text="静态代理"/>
+    tools:context="demo.luojun.com.demo.activity.java.design.DesignActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/dynamics_proxy_bt"
+        android:id="@+id/singleton_bt"
         android:layout_marginTop="20dp"
-        android:text="动态代理"/>
+        android:text="单利模式-singleton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/simple_factory_bt"
+        android:layout_marginTop="20dp"
+        android:text="工厂模式-simpleFactory"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cglib_proxy_bt"
+        android:id="@+id/build_bt"
+
         android:layout_marginTop="20dp"
-        android:text="非接口动态代理"/>
+        android:text="建造者设计模式：build"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/proxy_bt"
+        android:layout_marginTop="20dp"
+        android:text="代理设计模式 proxy"/>
+
 
 </LinearLayout>

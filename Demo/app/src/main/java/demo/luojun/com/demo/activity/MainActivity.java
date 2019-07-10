@@ -5,11 +5,10 @@ import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
-import demo.luojun.com.demo.activity.fragmentactivity.FragmentActivity;
+import demo.luojun.com.demo.activity.android.AndroidActivity;
+import demo.luojun.com.demo.activity.java.JavaActivity;
 import demo.luojun.com.demo.activity.networkactivity.NetworkActivity;
-import demo.luojun.com.demo.activity.rxactivity.ObservableActivity;
 import demo.luojun.com.demo.activity.testactivity.TestActivity;
-import demo.luojun.com.demo.activity.viewactivity.CustomViewActivity;
 import demo.luojun.com.demo.context.BaseActivity;
 
 public class MainActivity extends BaseActivity{
@@ -27,14 +26,16 @@ public class MainActivity extends BaseActivity{
         basePresenter.jumpActivity(NetworkActivity.class);
     }
 
-    @OnClick(R.id.custom_view_bt)
-    public void customViewBt() {
-        //startActivity(new Intent(MainActivity.this, NetworkActivity.class));
-        basePresenter.jumpActivity(CustomViewActivity.class);
+    @OnClick(R.id.java_bt)
+    public void buildBt(){
+        basePresenter.jumpActivity(JavaActivity.class);
     }
-    @OnClick(R.id.fragment_bt)
-    public void fragmentBt(){
-        basePresenter.jumpActivity(FragmentActivity.class);
+
+
+
+    @OnClick(R.id.android_bt)
+    public void fileioOnBt(){
+        basePresenter.jumpActivity(AndroidActivity.class);
     }
 
 
@@ -43,10 +44,7 @@ public class MainActivity extends BaseActivity{
     public void testBt(){
         basePresenter.jumpActivity(TestActivity.class);
     }
-    @OnClick(R.id.rxjava_bt)
-    public void rxjavaBt(){
-        basePresenter.jumpActivity(ObservableActivity.class);
-    }
+
 
 
     public void jump() {

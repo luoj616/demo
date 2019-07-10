@@ -1,9 +1,6 @@
-package demo.luojun.com.demo.activity.viewactivity;
+package demo.luojun.com.demo.activity.android.viewactivity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,8 +10,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.context.BaseActivity;
-
-import static android.R.attr.button;
 
 /**
  * 自定义view 列表activity

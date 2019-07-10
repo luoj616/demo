@@ -5,6 +5,8 @@ import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
+import demo.luojun.com.demo.activity.java.design.DesignActivity;
+import demo.luojun.com.demo.activity.java.rxactivity.ObservableActivity;
 import demo.luojun.com.demo.context.BaseActivity;
 
 public class JavaActivity extends BaseActivity {
@@ -16,15 +18,17 @@ public class JavaActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.build_bt)
-    public void buildBt(){
-        basePresenter.jumpActivity(BuildActivity.class);
+   //设计模式
+    @OnClick(R.id.design_bt)
+    public void dexsignBt(){
+        basePresenter.jumpActivity(DesignActivity.class);
     }
 
-    @OnClick(R.id.proxy_bt)
-    public void handlerBt(){
-        basePresenter.jumpActivity(ProxyActivity.class);
+    @OnClick(R.id.rxjava_bt)
+    public void rxjavaBt(){
+        basePresenter.jumpActivity(ObservableActivity.class);
     }
+
 
     @OnClick(R.id.file_io_bt)
     public void fileioOnBt(){
@@ -57,9 +61,6 @@ public class JavaActivity extends BaseActivity {
         basePresenter.jumpActivity(GenericsActivity.class);
     }
 
-    @OnClick(R.id.simple_factory_bt)
-    public void simpleFactoryBt(){
-        basePresenter.jumpActivity(FactoryActivity.class);
-    }
+
 
 }

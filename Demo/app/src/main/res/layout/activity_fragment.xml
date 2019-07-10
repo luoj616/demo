@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="demo.luojun.com.demo.activity.fragmentactivity.FragmentActivity">
+    tools:context=".activity.android.fragmentactivity.FragmentActivity">
 
     <Button
         android:layout_width="wrap_content"

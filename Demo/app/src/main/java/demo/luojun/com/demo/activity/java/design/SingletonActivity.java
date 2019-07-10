@@ -1,6 +1,5 @@
-package demo.luojun.com.demo.activity.java;
+package demo.luojun.com.demo.activity.java.design;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.lj.test.singleton.Carrier;
@@ -9,17 +8,22 @@ import com.lj.test.singleton.Singleton2;
 import com.lj.test.singleton.Singleton3;
 import com.lj.test.singleton.StoreHouse;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
+import demo.luojun.com.demo.context.BaseActivity;
+
+
 /*
 单例模式
  */
-public class SingletonActivity extends AppCompatActivity {
+public class SingletonActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singleton);
+        ButterKnife.bind(this);
     }
     @OnClick(R.id.single_bt)
     public void singletonOnClick(){
@@ -28,9 +32,9 @@ public class SingletonActivity extends AppCompatActivity {
         Carrier carrier1= new Carrier(storeHouse1);
         Carrier carrier2= new Carrier(storeHouse2);
         carrier1.moveIn(30);
-        System.out.println("仓库商品余量："+carrier1.storeHouse.getQuantity());
+        err("仓库商品余量："+carrier1.storeHouse.getQuantity());
         carrier2.MoveOut(50);
-        System.out.println("仓库商品余量："+carrier2.storeHouse.getQuantity());
+        err("仓库商品余量："+carrier2.storeHouse.getQuantity());
     }
     //饿汉式
     @OnClick(R.id.single_eh_bt)
