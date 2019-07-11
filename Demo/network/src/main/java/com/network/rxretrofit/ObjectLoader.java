@@ -21,7 +21,7 @@ public class ObjectLoader<T> implements CreateServiceLoader<T> {
     protected  <T> Observable<T> observe(Observable<T> observable){
         return observable
          .subscribeOn(Schedulers.io())
-            //  .unsubscribeOn(Schedulers.io())
+             .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 

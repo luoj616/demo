@@ -1,10 +1,10 @@
 package demo.luojun.com.demo.activity.java.rxactivity;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -123,10 +123,7 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
         actrion1();
     }
 
-    @OnClick(R.id.flatmap_bt)
-    public void flatMapOnClick(){
-        flatMapFunc();
-    }
+
 
     /**
      * 观察者oberver
@@ -245,7 +242,8 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
     /**
      * 县城调度
      */
-    public void schecduler(){
+    @OnClick(R.id.scheduler_bt)
+    public void schecdulerOnClick(){
         final int imageRes;
         final ImageView imageView = null;
         Observable.create(new Observable.OnSubscribe<Drawable>(){
@@ -256,51 +254,71 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
                 subscriber.onCompleted();
 
             }
-        }).observeOn(Schedulers.io())
+        }).filter(new Func1<Drawable, Boolean>() {
+            @Override
+            public Boolean call(Drawable drawable) {
+                return drawable!=null&&imageView!=null;
+            }
+        })
+                .observeOn(Schedulers.io())
                 .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<Drawable>() {
+                .subscribe(new Subscriber<Drawable>() {
                     @Override
-                    public void call(Drawable drawable) {
-                        if(imageView!=null&&drawable!=null)
+                    public void onCompleted() {
+                        err("线程调度完成---");
+                    }
 
+                    @Override
+                    public void onError(Throwable e) {
+                        err("线程调度完成---error");
+                    }
+
+                    @Override
+                    public void onNext(Drawable drawable) {
+                        err("线程调度 next--");
                         imageView.setImageDrawable(drawable);
                     }
                 });
     }
 
-    public void mapFuck(){
-       Observable.just("test")
-               .map(new Func1<String, Bitmap>() {
-                   @Override
-                   public Bitmap call(String s) {
-                       Bitmap bitmap = null;
-                       return bitmap;
-                   }
-               }).subscribe(new Action1<Bitmap>() {
-           @Override
-           public void call(Bitmap bitmap) {
+    /**
+     * 转换map
+     */
 
-           }
-       });
-    }
-    public void map(){
-        Student[] student = new Student[]{};
-        Observable.from(student)
+    @OnClick(R.id.map_bt)
+    public void mapOnClick(){
+        List<Student> list= new ArrayList<Student>();
+      list.add(new Student(true));
+        list.add(new Student(true,"luo"));
+        list.add(new Student(true,"jun"));
+        Observable.from(list)
                 .map(new Func1<Student, List<Student.Course>>() {
 
                     @Override
                     public List<Student.Course> call(Student student) {
+                        err(student.toString());
                         return student.getList();
                     }
                 })
                 .subscribe(new Action1<List<Student.Course>>() {
             @Override
             public void call(List<Student.Course> courses) {
-
+                  err("-------------cour size---_"+courses.size());
+                Observable.from(courses).subscribe(new Action1<Student.Course>() {
+                    @Override
+                    public void call(Student.Course course) {
+                        err("cour name---_"+course.getCourseName());
+                    }
+                });
             }
         });
     }
-    public void flatMapFunc(){
+
+    /**
+     * 转换 flatMap
+     */
+    @OnClick(R.id.flatmap_bt)
+    public void flatMapFuncOnClick(){
         Student student =new Student(true);
         Subscriber<Student.Course> subscriber = new Subscriber<Student.Course>() {
             @Override

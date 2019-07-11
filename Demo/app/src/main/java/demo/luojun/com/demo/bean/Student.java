@@ -45,6 +45,18 @@ public class Student extends BaseBean {
             }
         }
     };
+    public Student(boolean isInit,String name){
+        if(isInit){
+            this.Name=name;
+            this.age=20;
+            this.list= new ArrayList<>();
+            for(int i=0;i<5;i++){
+                Course course = new Course();
+                course.setCourseName("course=="+name+"--"+i);
+                this.list.add(course);
+            }
+        }
+    };
     public int getAge() {
         return age;
     }

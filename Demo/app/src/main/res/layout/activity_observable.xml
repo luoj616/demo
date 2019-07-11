@@ -5,24 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".activity.java.rxactivity.ObservableActivity">
     <Button
-        android:text="observer"
+        android:text="观察者-observer"
         android:id="@+id/observer_bt"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
-        android:text="subscriber"
+        android:text="观察者-subscriber"
     android:id="@+id/subscriber_bt"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
     <Button
-        android:text="justObservable"
+        android:text="被观察者-justObservable"
         android:id="@+id/just_observable_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
-        android:text="formObservable"
+        android:text="被观察者-formObservable"
         android:id="@+id/from_observable_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -32,20 +34,34 @@
         android:layout_marginTop="20dp"
         android:id="@+id/action0_bt"
         android:layout_gravity="center_horizontal"
-        android:text="onCompleted" />
+        android:text="闭包Actoin0__onCompleted" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/action1_bt"
         android:layout_gravity="center_horizontal"
-        android:text="onNext_onError" />
+        android:text="闭包Acton1_onNext_onError" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/scheduler_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="线程切换-scheduler" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/map_bt"
+        android:layout_gravity="center_horizontal"
+        android:text="转换-map" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/flatmap_bt"
         android:layout_gravity="center_horizontal"
-        android:text="flatmap" />
+        android:text="转换——flatmap" />
 </LinearLayout>
