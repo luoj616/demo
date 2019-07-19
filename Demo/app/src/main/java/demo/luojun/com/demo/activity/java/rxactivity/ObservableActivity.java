@@ -170,6 +170,7 @@ observable =Observable.create(new Observable.OnSubscribe<String>() {
      */
     public void justObservable(){
         Observable observable= Observable.just("just","ahh","werwr");
+        // 将会依次调用：
         observable.subscribe(observer);
 
 

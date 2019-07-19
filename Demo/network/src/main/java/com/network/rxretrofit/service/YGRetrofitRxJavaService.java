@@ -1,6 +1,7 @@
 package com.network.rxretrofit.service;
 
 import com.network.AppServerAPI;
+import com.network.BaseBean;
 import com.network.MyClass;
 
 import retrofit2.http.Field;
@@ -20,6 +21,6 @@ public interface YGRetrofitRxJavaService {
 
     @POST(AppServerAPI.YG_commodityDetail)
     @FormUrlEncoded
-    Observable<MyClass> getDetail(@Field("productid") String productid);
+    Observable<BaseBean<String>> getDetail(@Field("productid") String productid);
 
 }

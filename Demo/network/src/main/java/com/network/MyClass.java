@@ -16,7 +16,7 @@ public class MyClass extends BaseBean {
         return "MyClass{" +
                 "age=" + age +
                 '}'+"BaseBean{" +
-                "code='" + code + '\'' +
+
                 ", response='" + response + '\'' +
                 '}';
     }

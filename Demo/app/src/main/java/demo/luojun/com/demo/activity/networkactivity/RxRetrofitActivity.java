@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.network.MyClass;
+import com.network.rxretrofit.ProgressSubscriber;
+import com.network.rxretrofit.SubscriberOnNextListener;
+import com.network.rxretrofit.loaderfactory.YGSimpleFactory;
 import com.network.rxretrofit.serviceloader.YgServiceLoader;
 
 import butterknife.BindView;
@@ -29,10 +32,20 @@ public class RxRetrofitActivity extends BaseActivity{
         setContentView(R.layout.activity_rx_retrofit);
         ButterKnife.bind(this);
     }
+    private SubscriberOnNextListener getTopMovieOnNext;
+
+
     @OnClick(R.id.rxretrofit_detail_bt)
     public void detailOnClick(){
+        getTopMovieOnNext = new SubscriberOnNextListener<String>() {
+            @Override
+            public void onNext(String subjects) {
+               // resultTV.setText(subjects.toString());
+            }
+        };
 
-             YgServiceLoader ygServiceLoader = new YgServiceLoader();
+        YGSimpleFactory.getYgServiceLoader().getDetailS(new ProgressSubscriber(getTopMovieOnNext, RxRetrofitActivity.this), "99890025");
+            /* YgServiceLoader ygServiceLoader = new YgServiceLoader();
                 ygServiceLoader.getDetail("99890025")
 
                         .subscribe(new Action1<MyClass>() {
@@ -41,7 +54,7 @@ public class RxRetrofitActivity extends BaseActivity{
                                 err("restul===" + s);
                                  versionBt.setText("sfsfd");
                             }
-                        });
+                        });*/
 
 
 

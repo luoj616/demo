@@ -9,7 +9,10 @@ import com.network.rxretrofit.serviceloader.YgServiceLoader;
  */
 
 public class YGSimpleFactory {
-
+    /**
+     * 获取service
+     * @return
+     */
     public static YgServiceLoader getYgServiceLoader(){
         return  new YgServiceLoader();
     }
