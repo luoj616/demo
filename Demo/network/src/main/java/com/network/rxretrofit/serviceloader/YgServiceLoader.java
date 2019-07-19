@@ -64,7 +64,7 @@ public class YgServiceLoader extends ObjectLoader {
     }
     /**
      * 用来统一处理Http的resultCode,并将HttpResult的Data部分剥离出来返回给subscriber
-     *
+     *http://gank.io/post/56e80c2c677659311bed9841
      * @param <T> Subscriber真正需要的数据类型，也就是Data部分的数据类型
      */
     private class HttpResultFunc<T> implements Func1<BaseBean<T>, T> {
