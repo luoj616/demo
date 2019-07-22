@@ -3,6 +3,7 @@ package com.network.rxretrofit;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.network.ReturnHttpResponse;
 import com.network.rxretrofit.progress.ProgressCancelListener;
 import com.network.rxretrofit.progress.ProgressDialogHandler;
 
@@ -19,13 +20,34 @@ import rx.Subscriber;
  */
 public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCancelListener {
 
-    private SubscriberOnNextListener mSubscriberOnNextListener;
+  //  private SubscriberOnNextListener mSubscriberOnNextListener;
     private ProgressDialogHandler mProgressDialogHandler;
+    private ReturnHttpResponse returnHttpResponse;//结果处理
+    private boolean isFail =false;//是否自己处理fail
 
     private Context context;
 
-    public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Context context) {
-        this.mSubscriberOnNextListener = mSubscriberOnNextListener;
+    public ProgressSubscriber(ReturnHttpResponse returnHttpResponse, Context context) {
+       // this.mSubscriberOnNextListener = mSubscriberOnNextListener;
+        this.returnHttpResponse = returnHttpResponse ;
+        isFail = true;
+        this.context = context;
+        mProgressDialogHandler = new ProgressDialogHandler(context, this, true);
+    }
+    public ProgressSubscriber(final SubscriberOnNextListener mSubscriberOnNextListener, Context context) {
+        this.returnHttpResponse = new ReturnHttpResponse<T>(){
+
+            @Override
+            public void success(T t) {
+                mSubscriberOnNextListener.onNext(t);
+            }
+
+            @Override
+            public void getFail(String mes, int Code) {
+
+            }
+        };
+      //  this.mSubscriberOnNextListener = mSubscriberOnNextListener;
         this.context = context;
         mProgressDialogHandler = new ProgressDialogHandler(context, this, true);
     }
@@ -68,14 +90,20 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
      */
     @Override
     public void onError(Throwable e) {
-        if (e instanceof SocketTimeoutException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
-        } else if (e instanceof ConnectException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
         dismissProgressDialog();
+        if(isFail) {
+            returnHttpResponse.getFail(e.getMessage(),0);
+
+            return;
+        }
+        if (e instanceof SocketTimeoutException) {
+            Toast.makeText(context, "Subscriber onErro:" +"网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+        } else if (e instanceof ConnectException) {
+            Toast.makeText(context, "Subscriber onErro:" +"网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Subscriber onErro:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 
@@ -86,9 +114,11 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
      */
     @Override
     public void onNext(T t) {
-        if (mSubscriberOnNextListener != null) {
+        if(returnHttpResponse!=null)
+            returnHttpResponse.success(t);
+      /*  if (mSubscriberOnNextListener != null) {
             mSubscriberOnNextListener.onNext(t);
-        }
+        }*/
     }
 
     /**

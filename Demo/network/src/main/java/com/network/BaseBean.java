@@ -6,7 +6,7 @@ package com.network;
 
 public class BaseBean<T> {
 
-    private int code;
+    private int code=100;
     private String msg;
 
     private T data;

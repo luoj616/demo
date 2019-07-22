@@ -1,18 +1,16 @@
 package com.network.rxretrofit.serviceloader;
 
+import android.content.Context;
 import android.util.Log;
 
-import com.network.BaseBean;
 import com.network.MyClass;
-import com.network.rxretrofit.ApiException;
+import com.network.ReturnHttpResponse;
+import com.network.rxretrofit.HttpResultFunc;
 import com.network.rxretrofit.ObjectLoader;
+import com.network.rxretrofit.SubscriberOnNextListener;
 import com.network.rxretrofit.service.YGRetrofitRxJavaService;
 
 import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by luo.j on 2019/7/3.
@@ -40,43 +38,31 @@ public class YgServiceLoader extends ObjectLoader {
 
 
 
-    public void getDetailS(Subscriber<String> subscriber, String productId){
-
-//        movieService.getTopMovie(start, count)
-//                .map(new HttpResultFunc<List<Subject>>())
-//                .subscribeOn(Schedulers.io())
-//                .unsubscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(subscriber);
-
+    public void getDetailS(String productId,
+                           SubscriberOnNextListener mSubscriberOnNextListener, Context context){
         Observable observable = ygRetrofitRxJavaService.getDetail(productId)
                 .map(new HttpResultFunc<String>());
 
-        toSubscribe(observable, subscriber);
+        toSubscribe(observable, mSubscriberOnNextListener,context);
     }
 
 
-    private <T> void toSubscribe(Observable<T> o, Subscriber<T> s){
-        o.subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(s);
-    }
-    /**
-     * 用来统一处理Http的resultCode,并将HttpResult的Data部分剥离出来返回给subscriber
-     *http://gank.io/post/56e80c2c677659311bed9841
-     * @param <T> Subscriber真正需要的数据类型，也就是Data部分的数据类型
-     */
-    private class HttpResultFunc<T> implements Func1<BaseBean<T>, T> {
 
-        @Override
-        public T call(BaseBean<T> httpResult) {
-            Log.e("info",httpResult.toString());
-            if (httpResult.getCode() != 0) {
-                throw new ApiException(httpResult.getCode());
-            }
-            return httpResult.getData();
-        }
+
+    public void getDetailS(String productId,
+                           ReturnHttpResponse returnHttpResponse, Context context){
+        Observable observable = ygRetrofitRxJavaService.getDetail(productId)
+                .map(new HttpResultFunc<String>());
+
+        toSubscribe(observable, returnHttpResponse,context);
     }
+
+
+
+
+
+
+
+
 }
 
