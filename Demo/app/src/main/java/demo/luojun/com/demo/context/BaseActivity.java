@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.orhanobut.logger.Logger;
 
 import java.util.Map;
@@ -19,6 +20,9 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //ARouter inject 注入
+        ARouter.getInstance().inject(this);
+
         priintLog("所在页面--oncreate===——————"+getClass().getSimpleName());
         basePresenter = new BasePresenter() {
             @Override

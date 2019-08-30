@@ -33,6 +33,7 @@ public class RxRetrofitServiceManager {
 
 
 
+
     public OkHttpClient genericClient() {
         OkHttpClient httpClient = new OkHttpClient.Builder()
                 .addInterceptor(new InterceptorHeader())//公共参数
@@ -48,6 +49,8 @@ public class RxRetrofitServiceManager {
     private static class SingletonHolder{
         private static final RxRetrofitServiceManager INSTANCE = new RxRetrofitServiceManager();
     }
+
+
     /**
      * 获取RetrofitServiceManager
      * @return
@@ -55,6 +58,7 @@ public class RxRetrofitServiceManager {
     public static RxRetrofitServiceManager getInstance(){
         return SingletonHolder.INSTANCE;
     }
+
     /**
      * 获取对应的Service
      * @param service Service 的 class

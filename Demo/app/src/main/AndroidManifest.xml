@@ -85,7 +85,10 @@
         <activity android:name=".activity.networkactivity.RxRetrofitActivity" />
         <activity android:name=".activity.java.design.FactoryActivity" />
         <activity android:name=".activity.java.design.SingletonActivity" />
-        <activity android:name=".activity.java.design.DesignActivity"></activity>
+        <activity android:name=".activity.java.design.DesignActivity" />
+        <activity android:name=".activity.networkactivity.MVPActivity" />
+        <activity android:name=".context.BaseNewActivity" />
+        <activity android:name=".context.BaseMvpActivity"></activity>
     </application>
 
 </manifest>

@@ -38,7 +38,7 @@ public class ObjectLoader<T> implements CreateServiceLoader<T> {
 
     public  <T> void toSubscribe(Observable<T> o,
                                  SubscriberOnNextListener mSubscriberOnNextListener, Context context){
-        o.subscribeOn(Schedulers.io())
+      o.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new ProgressSubscriber(mSubscriberOnNextListener,context));

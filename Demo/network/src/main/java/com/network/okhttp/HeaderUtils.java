@@ -12,14 +12,18 @@ public class HeaderUtils {
 
 
     public static Headers getHead(){
-        String tokenStr = "860962035785914_dc:09:4c:d6:f9:63";
+//        String uid=(System.currentTimeMillis()+"").substring(0,8);//"dc:09:4c:d6:f9:63"
+       String imei=(System.currentTimeMillis()+"").substring(2);//"860962035785914"
+        String uid="dc:09:4c:d6:f9:63";
+    //    String imei="86096203";
+        String tokenStr =imei+"_"+uid; //"860962035785914_dc:09:4c:d6:f9:63";
         String ran = System.currentTimeMillis() + "";
         String token = RSAEncryptionUtil.sign(tokenStr + "_" + ran);
         //   print(tokenStr + "  -- " + ran + "  " + token);
         //  print("test==useragin==" + getUserAgent());
         Headers.Builder builder =new Headers.Builder()
                 .add("User-Agent", getUserAgent())
-                .add("Udid", "dc:09:4c:d6:f9:63")//Udid=dc:09:4c:d6:f9:63
+                .add("Udid", uid)//Udid=dc:09:4c:d6:f9:63
                 .add("Ver", "1.0")//Ver=1.0
                 .add("Os", "android")//Os=android
                 .add("screenlevel", "1")//screenlevel=1
@@ -38,7 +42,7 @@ public class HeaderUtils {
                 .add("Appversion", "4.2.4")//Udid=dc:09:4c:d6:f9:63
                 .add("commodityCode", "")//Ver=1.0
                 .add("screenw", "720")//Udid=dc:09:4c:d6:f9:63
-                .add("imei", "860962035785914")//Ver=1.0
+                .add("imei", imei)//Ver=1.0
                 .add("topicName", "")//Udid=dc:09:4c:d6:f9:63
                 .add("Unique", "ed00c4efa746e354f67f7eaa1ef0f20b");
         return builder.build();

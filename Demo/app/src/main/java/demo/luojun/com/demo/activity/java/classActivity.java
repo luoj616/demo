@@ -37,7 +37,7 @@ public class classActivity extends BaseActivity {
     }
 
     /**
-     * Class 属性 field
+     * Class 属性 Fiele
      */
     @OnClick(R.id.filed_bt)
     public void filedOnClick() {

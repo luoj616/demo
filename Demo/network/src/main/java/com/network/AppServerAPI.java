@@ -14,11 +14,19 @@ public class AppServerAPI {
     public static final String OKHTTP_GET = "http://initial.belle.net.cn/initial-web/countryRegionCodeMapping";
     public static final String OKHTTP_GET_JIANSHU = "http://www.jianshu.com/u/9df45b87cfdf";
    //YOUGOU
-    public static final String YG_IP= "http://mobile.yougou.com/";
+  //  public static final String YG_IP= "http://mobile.yougou.com/";
+  //  public static final String YG_IP= "http://mobile-test.yougou.com/";
+  //  public static final String YG_IP= "http://m.yougou.com/";
+    public static final String YG_IP= "http://10.0.41.7";
+
+
     public static final String YG_VERSION = "v_1.8/version";
     public static final String YG_categories4all = "v_1.8/categories4all";
     public static final String YG_commodityDetail = "v_1.8/commodityDetail";
     public static final String YG_CHANELS = "v_1.8/channels";
+    public static final String YG_LOGIN ="v_1.8/quicklyLogin";
+    public static final String YG_SEND_MSM ="v_1.8/quicklyLoginMobileverify";
+
 
 
 }

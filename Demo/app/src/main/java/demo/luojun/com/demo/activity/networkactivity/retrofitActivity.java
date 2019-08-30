@@ -2,7 +2,8 @@ package demo.luojun.com.demo.activity.networkactivity;
 
 import android.os.Bundle;
 
-import com.network.RetrofitResponse;
+import com.network.BaseBean;
+import com.network.ReturnHttpResponse;
 import com.network.retrofit.RetrofitRequest;
 
 import butterknife.ButterKnife;
@@ -41,14 +42,14 @@ public class retrofitActivity extends BaseActivity {
     @OnClick(R.id.retrofit_sync_bt)
     public void syncOnclick(){
         RetrofitRequest retrofitRequest= new RetrofitRequest();
-        retrofitRequest.getVersion(new RetrofitResponse() {
+        retrofitRequest.getVersion(new ReturnHttpResponse<BaseBean>() {
             @Override
-            public void getSuccess(String result) {
+            public void success(BaseBean o) {
 
             }
 
             @Override
-            public void getFail(String mes) {
+            public void getFail(String mes, int Code) {
 
             }
         });
@@ -69,14 +70,14 @@ public class retrofitActivity extends BaseActivity {
      @OnClick(R.id.retrofit_post_bt)
      public void commendDetailOnClick(){
          RetrofitRequest retrofitRequest= new RetrofitRequest();
-         retrofitRequest.getDetail("99890025", new RetrofitResponse() {
+         retrofitRequest.getDetail("99890025", new ReturnHttpResponse<BaseBean>() {
              @Override
-             public void getSuccess(String result) {
-                 err("post 异步+=="+result+"---");
+             public void success(BaseBean o) {
+
              }
 
              @Override
-             public void getFail(String mes) {
+             public void getFail(String mes, int Code) {
 
              }
          });

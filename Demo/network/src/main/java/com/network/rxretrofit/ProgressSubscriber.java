@@ -1,6 +1,7 @@
 package com.network.rxretrofit;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.network.ReturnHttpResponse;
@@ -90,6 +91,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
      */
     @Override
     public void onError(Throwable e) {
+        Log.e("info","-------------------error---------------------"+e.toString());
         dismissProgressDialog();
         if(isFail) {
             returnHttpResponse.getFail(e.getMessage(),0);

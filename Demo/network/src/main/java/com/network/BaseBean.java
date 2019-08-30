@@ -1,16 +1,19 @@
 package com.network;
 
+import java.io.Serializable;
+
 /**
  * Created by luo.j on 2019/7/4.
  */
 
-public class BaseBean<T> {
+public class BaseBean<T> implements Serializable{
 
-    private int code=100;
+    private int code=0;
     private String msg;
 
     private T data;
    protected String response;
+    public int a;
 
     public int getCode() {
         return code;
@@ -29,11 +32,19 @@ public class BaseBean<T> {
     }
 
     public T getData() {
+        if(data==null&&data instanceof String){
+            this.data= (T) "----制怒来了----";
+        }
         return data;
     }
 
     public void setData(T data) {
-        this.data = data;
+        if(data==null&&data instanceof String){
+            this.data= (T) "----制怒来了----";
+        }else{
+            this.data = data;
+        }
+
     }
 
     public String getResponse() {

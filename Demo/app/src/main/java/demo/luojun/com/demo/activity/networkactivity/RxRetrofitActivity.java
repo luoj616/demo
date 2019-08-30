@@ -63,17 +63,21 @@ public class RxRetrofitActivity extends BaseActivity{
             }
         }, RxRetrofitActivity.this);
 
-      //YGSimpleFactory.getYgServiceLoader().getDetailS("99890025",getTopMovieOnNext, RxRetrofitActivity.this);
-            /* YgServiceLoader ygServiceLoader = new YgServiceLoader();
-                ygServiceLoader.getDetail("99890025")
+  YGSimpleFactory.getYgServiceLoader().getDetailS("99890025",getTopMovieOnNext, RxRetrofitActivity.this);
 
-                        .subscribe(new Action1<MyClass>() {
-                            @Override
-                            public void call(MyClass s) {
-                                err("restul===" + s);
-                                 versionBt.setText("sfsfd");
-                            }
-                        });*/
+
+
+
+//           YgServiceLoader ygServiceLoader = new YgServiceLoader();
+//                ygServiceLoader.getDetail("99890025")
+//
+//                        .subscribe(new Action1<MyClass>() {
+//                            @Override
+//                            public void call(MyClass s) {
+//                                err("restul===" + s);
+//                                 versionBt.setText("sfsfd");
+//                            }
+//                        });
 
 
 

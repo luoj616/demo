@@ -16,4 +16,5 @@ public class YGSimpleFactory {
     public static YgServiceLoader getYgServiceLoader(){
         return  new YgServiceLoader();
     }
+
 }

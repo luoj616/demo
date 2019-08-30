@@ -10,6 +10,16 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+
+
+        //arouter
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                arguments = [moduleName :project.getName() ]
+
+            } }
         //这句很关键
         /*      jackOptions {
             enabled true
@@ -77,6 +87,12 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+
+
+    compile'com.alibaba:arouter-api:1.3.1'
+
+    annotationProcessor'com.alibaba:arouter-compiler:1.1.4'
 }
 /*
 allprojects {

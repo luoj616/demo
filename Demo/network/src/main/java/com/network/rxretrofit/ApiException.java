@@ -1,5 +1,7 @@
 package com.network.rxretrofit;
 
+import android.util.Log;
+
 /**
  * Created by liukun on 16/3/10.
  */
@@ -24,6 +26,7 @@ public class ApiException extends RuntimeException {
      * @return
      */
     private static String getApiExceptionMessage(int code){
+        Log.e("info", "****************ApiException: *****************" );
         String message = "";
         switch (code) {
             case USER_NOT_EXIST:

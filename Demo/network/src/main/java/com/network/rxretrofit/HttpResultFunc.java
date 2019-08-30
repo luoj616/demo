@@ -21,7 +21,8 @@ public class HttpResultFunc<T> implements Func1<BaseBean<T>, T> {
     }*/
     @Override
     public T call(BaseBean<T> httpResult) {
-        Log.e("info",httpResult.toString());
+
+        Log.e("info","过滤结果=="+httpResult.getCode()+"------"+httpResult.toString());
 /*        if(httpResult.getCode() != 0&&returnHttpResponse!=null){
             returnHttpResponse.getFail("----",httpResult.getCode());
             throw new ApiException(ApiException.ERROR);
@@ -29,6 +30,7 @@ public class HttpResultFunc<T> implements Func1<BaseBean<T>, T> {
         if (httpResult.getCode() != 0) {
             throw new ApiException(httpResult.getCode());
         }
+        Log.e("info",httpResult.getData()+"---**---"+httpResult.toString());
         return httpResult.getData();
     }
 }

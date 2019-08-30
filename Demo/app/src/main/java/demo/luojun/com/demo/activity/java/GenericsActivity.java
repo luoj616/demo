@@ -3,6 +3,8 @@ package demo.luojun.com.demo.activity.java;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.network.BaseBean;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.activity.model.GenericsClass;
-import demo.luojun.com.demo.bean.BaseBean;
 import demo.luojun.com.demo.bean.Student;
 import demo.luojun.com.demo.context.BaseActivity;
 import demo.luojun.com.demo.interfaceimg.GenericsImg;

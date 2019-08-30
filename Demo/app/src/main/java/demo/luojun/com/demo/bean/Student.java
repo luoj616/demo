@@ -1,5 +1,8 @@
 package demo.luojun.com.demo.bean;
 
+import com.network.BaseBean;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -8,7 +11,8 @@ import java.util.Map;
  * Created by luo.j on 2019/5/14.
  */
 
-public class Student extends BaseBean {
+public class Student extends BaseBean implements Serializable {
+
     private int age;
     private String Name;
     private List<Course> list;
@@ -81,6 +85,7 @@ public class Student extends BaseBean {
 
 
 
+
     public static class Builder{
          private int age;
          private String name;
@@ -98,7 +103,7 @@ public class Student extends BaseBean {
          }
      }
 
-    public static class Course{
+    public static class Course implements Serializable{
         private String courseName;
 
         public String getCourseName() {
