@@ -13,7 +13,6 @@ import butterknife.OnClick;
 import demo.luojun.com.demo.R;
 import demo.luojun.com.demo.activity.android.AndroidActivity;
 import demo.luojun.com.demo.activity.java.JavaActivity;
-import demo.luojun.com.demo.activity.testactivity.TestActivity;
 import demo.luojun.com.demo.bean.Student;
 import demo.luojun.com.demo.context.ARouterConstance;
 import demo.luojun.com.demo.context.BaseActivity;
@@ -85,7 +84,7 @@ public class MainActivity extends BaseActivity{
 
     @OnClick(R.id.test_bt)
     public void testBt(){
-        basePresenter.jumpActivity(TestActivity.class);
+       // basePresenter.jumpActivity(TestActivity.class);
     }
 
 

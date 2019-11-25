@@ -1,7 +1,6 @@
 package demo.luojun.com.demo.activity.model;
 
 import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
 
 import java.lang.reflect.Proxy;
 
@@ -36,7 +35,7 @@ public class ProxyFactory {
 
     /**
      * 获取非接口动态代理
-     * @param object
+
      * @return
      */
     public static Object getCglibDynaProxy(Object target){

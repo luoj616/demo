@@ -12,9 +12,10 @@
         android:layout_width="fill_parent"
         android:layout_height="100dip"
         android:id="@+id/res_txt"
-        android:text="heellow" />
+        android:text="服务器返回消息显示在此" />
 
     <LinearLayout
+        android:id="@+id/send_ll"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/res_txt"
@@ -39,8 +40,27 @@
 
 
 
+    <Button
+        android:id="@+id/scan_btn"
+        android:layout_below="@+id/send_ll"
+         android:layout_marginTop="20dp"
+        android:text="扫描socket"
+        android:layout_width ="100dip"
+        android:layout_height="wrap_content"
+        >
 
+    </Button>
 
+    <Button
+        android:id="@+id/scan_btn2"
 
+        android:layout_below="@+id/scan_btn"
+        android:layout_marginTop="20dp"
+        android:text="扫描socket2"
+        android:layout_width ="100dip"
+        android:layout_height="wrap_content"
+        >
+
+    </Button>
 
 </RelativeLayout>
